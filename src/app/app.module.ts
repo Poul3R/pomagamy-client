@@ -8,13 +8,8 @@ import { RegistrationComponent } from './auth/registration/registration.componen
 import { MainComponent } from './home/main/main.component';
 import { NoticeListComponent } from './home/notice-list/notice-list.component';
 import { NoticeComponent } from './home/notice-list/notice/notice.component';
-import { DashboardComponent } from './account/dashboard/dashboard.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {SharedModule} from './shared/shared.module';
-import { InProgressComponent } from './account/dashboard/in-progress/in-progress.component';
-import { InProgressBoxComponent } from './account/dashboard/in-progress-box/in-progress-box.component';
-import { FinishedBoxComponent } from './account/dashboard/finished-box/finished-box.component';
-import { SettingsComponent } from './account/settings/settings.component';
 
 @NgModule({
   declarations: [
@@ -24,11 +19,7 @@ import { SettingsComponent } from './account/settings/settings.component';
     MainComponent,
     NoticeListComponent,
     NoticeComponent,
-    DashboardComponent,
-    InProgressComponent,
-    InProgressBoxComponent,
-    FinishedBoxComponent,
-    SettingsComponent
+
   ],
   imports: [
     BrowserModule,

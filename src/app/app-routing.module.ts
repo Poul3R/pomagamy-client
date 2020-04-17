@@ -8,7 +8,11 @@ import {MainComponent} from './home/main/main.component';
 const routes: Routes = [
   {path: 'login', component: LoginComponent},
   {path: 'registration', component: RegistrationComponent},
-  {path: '', component: MainComponent},
+  {
+    path: 'account',
+    loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
+  },
+  {path: '', component: MainComponent, pathMatch: 'full'},
 ];
 
 @NgModule({
