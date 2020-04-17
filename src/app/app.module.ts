@@ -9,6 +9,7 @@ import { MainComponent } from './home/main/main.component';
 import { NoticeListComponent } from './home/notice-list/notice-list.component';
 import { NoticeComponent } from './home/notice-list/notice/notice.component';
 import { DashboardComponent } from './account/dashboard/dashboard.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { DashboardComponent } from './account/dashboard/dashboard.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    BrowserAnimationsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
