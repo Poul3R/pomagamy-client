@@ -6,12 +6,12 @@ import {MainComponent} from './home/main/main.component';
 
 
 const routes: Routes = [
-  {path: 'login', component: LoginComponent},
-  {path: 'registration', component: RegistrationComponent},
   {
     path: 'account',
     loadChildren: () => import('./account/account.module').then(m => m.AccountModule)
   },
+  {path: 'login', component: LoginComponent},
+  {path: 'registration', component: RegistrationComponent},
   {path: '', component: MainComponent, pathMatch: 'full'},
 ];
 
