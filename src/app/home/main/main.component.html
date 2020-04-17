@@ -1,2 +1,20 @@
-<p>main works!</p>
-<h2>Wyszukiwarka tutaj</h2>
+<div class="global-container">
+    <form class="city-form-center">
+        <mat-form-field appearance="standard">
+            <mat-label>Wprowadź miasto</mat-label>
+            <input matInput>
+        </mat-form-field>
+    </form><br /><br />
+    <div class="notice-list">
+        <table mat-table>
+            <td mat-cell style="color: red"><b>WYSOKI PRIORYTET</b>
+                <tr mat-row><app-notice></app-notice></tr>
+                <tr mat-row><app-notice></app-notice></tr>
+            </td>
+            <td mat-cell style="color: green"><b>STANDARDOWY PRIORYTET</b>
+                <tr mat-row><app-notice></app-notice></tr>
+                <tr mat-row><app-notice></app-notice></tr>
+            </td>
+        </table>
+    </div>
+</div>

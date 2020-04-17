@@ -16,8 +16,7 @@ import {SharedModule} from './shared/shared.module';
     LoginComponent,
     RegistrationComponent,
     MainComponent,
-    NoticeComponent,
-
+    NoticeComponent
   ],
   imports: [
     BrowserModule,
