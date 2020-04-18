@@ -1,14 +1,14 @@
-import {Component, OnInit, NgModule} from '@angular/core';
-import {NoticeService} from '../../shared/services/notice.service';
-import {NoticeInterface} from '../../shared/interfaces/notice.interface';
+import {Component, OnInit} from '@angular/core';
+import {NoticeService} from '../../services/notice.service';
+import {NoticeInterface} from '../../interfaces/notice.interface';
 
 @Component({
-  selector: 'app-main',
-  templateUrl: './main.component.html',
-  styleUrls: ['./main.component.scss'],
+  selector: 'app-search-notice',
+  templateUrl: './search-notice.component.html',
+  styleUrls: ['./search-notice.component.scss'],
 })
 
-export class MainComponent implements OnInit {
+export class SearchNoticeComponent implements OnInit {
   noticesStandard: NoticeInterface[] = [];
   noticesPriority: NoticeInterface[] = [];
 

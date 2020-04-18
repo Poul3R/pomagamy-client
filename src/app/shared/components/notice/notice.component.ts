@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
-import {NoticeInterface} from '../../shared/interfaces/notice.interface';
-import {NoticeService} from '../../shared/services/notice.service';
+import {NoticeInterface} from '../../interfaces/notice.interface';
+import {NoticeService} from '../../services/notice.service';
 
 @Component({
   selector: 'app-notice',
