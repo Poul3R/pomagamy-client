@@ -8,6 +8,12 @@ import {MatListModule, MatList} from '@angular/material/list';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import {SearchNoticeComponent} from './components/search-notice/search-notice.component';
 import {NoticeComponent} from './components/notice/notice.component';
+import {CommonModule} from '@angular/common';
+import {MatSelectModule} from '@angular/material/select';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import {MatIconModule} from '@angular/material/icon';
+import { NavbarComponent } from './layout/navbar/navbar.component';
+import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
@@ -18,7 +24,11 @@ import {NoticeComponent} from './components/notice/notice.component';
     MatButtonModule,
     MatListModule,
     MatToolbarModule,
-
+    CommonModule,
+    MatSelectModule,
+    MatCheckboxModule,
+    MatIconModule,
+    RouterModule,
   ],
   exports: [
     MatCardModule,
@@ -27,11 +37,15 @@ import {NoticeComponent} from './components/notice/notice.component';
     MatButtonModule,
     MatListModule,
     MatToolbarModule,
-
+    MatSelectModule,
+    MatCheckboxModule,
+    MatIconModule,
+    NavbarComponent,
   ],
   declarations: [
     SearchNoticeComponent,
     NoticeComponent,
+    NavbarComponent,
   ]
 })
 export class SharedModule {

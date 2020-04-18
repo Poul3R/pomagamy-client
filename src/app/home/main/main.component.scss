@@ -1,0 +1,24 @@
+.category-selector {
+  width: 100vw;
+  height: 100vh;
+
+
+}
+
+.category-selector__box {
+  height: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+
+  color: #000;
+
+  &--left {
+    background-color: #fff;
+  }
+
+  &--right {
+    background-color: #D4213D;
+  }
+}

@@ -1,0 +1,17 @@
+@import "../../shared/global";
+
+mat-card {
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+mat-form-field {
+  width: calc(100% - 50px);
+
+}
+
+button {
+  margin-left: 10px;
+}
+

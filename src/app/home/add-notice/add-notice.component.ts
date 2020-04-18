@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-settings',
-  templateUrl: './settings.component.html',
-  styleUrls: ['./settings.component.scss']
+  selector: 'app-add-notice',
+  templateUrl: './add-notice.component.html',
+  styleUrls: ['./add-notice.component.scss']
 })
-export class SettingsComponent implements OnInit {
+
+
+export class AddNoticeComponent implements OnInit {
   voivodeships: {
     value: string,
     viewValue: string
@@ -13,6 +15,7 @@ export class SettingsComponent implements OnInit {
     {value: 'pomorskie', viewValue: 'pomorskie'},
     {value: 'zachodniopomorskie', viewValue: 'zachodniopomorskie'},
   ];
+
 
   constructor() { }
 

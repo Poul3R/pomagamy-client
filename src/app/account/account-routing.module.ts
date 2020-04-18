@@ -9,7 +9,7 @@ const accountRoutes: Routes = [
     component: DashboardComponent
   },
   {
-    path: 'settings',
+    path: 'ustawienia',
     component: SettingsComponent
   }
 ];

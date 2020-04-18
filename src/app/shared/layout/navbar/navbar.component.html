@@ -1,0 +1,16 @@
+<mat-toolbar color="warn" class="navbar">
+  <a href="/">Pomagamy</a>
+
+  <nav class="nav">
+    <button mat-button class="nav__button">
+      <mat-icon (click)="onToggleMenu()">menu</mat-icon>
+    </button>
+
+    <ul class="nav__list" [ngClass]="showNavbar === true ? 'nav__list nav__list--show' : 'nav__list'">
+      <li class="nav__item"><a routerLink="konto">Kokpit</a></li>
+      <li class="nav__item"><a routerLink="lista">Lista</a></li>
+      <li class="nav__item"><a routerLink="konto/ustawienia">Ustawienia</a></li>
+      <li class="nav__item"><a routerLink="wyloguj">Wyloguj</a></li>
+    </ul>
+  </nav>
+</mat-toolbar>

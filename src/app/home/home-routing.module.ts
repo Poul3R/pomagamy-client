@@ -2,6 +2,7 @@ import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {MainComponent} from './main/main.component';
 import {SearchNoticeComponent} from '../shared/components/search-notice/search-notice.component';
+import {AddNoticeComponent} from './add-notice/add-notice.component';
 
 const homeRoute: Routes = [
   {
@@ -9,8 +10,12 @@ const homeRoute: Routes = [
     component: MainComponent
   },
   {
-    path: 'list',
+    path: 'lista',
     component: SearchNoticeComponent
+  },
+  {
+    path: 'dodaj-ogloszenie',
+    component: AddNoticeComponent
   },
 ];
 

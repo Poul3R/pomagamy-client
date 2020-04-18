@@ -6,7 +6,6 @@ import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {SharedModule} from './shared/shared.module';
 import {HttpClientModule} from '@angular/common/http';
-import { MainComponent } from './home/main/main.component';
 
 @NgModule({
   declarations: [

@@ -1,0 +1,60 @@
+@import "../../shared/global";
+
+mat-card {
+  width: 95%;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+
+  mat-form-field {
+    width: 100%;
+  }
+
+  &__row {
+    display: flex;
+    flex-direction: column;
+  }
+
+  textarea {
+    resize: none;
+  }
+
+  button {
+    max-width: 230px;
+    margin: 0 auto;
+  }
+}
+
+@include tablet {
+  .form {
+    &__row {
+      flex-direction: row;
+
+      mat-form-field {
+        width: 50%;
+
+        &:first-child {
+          margin-right: 10px;
+
+        }
+
+        &:last-child {
+          margin-left: 10px;
+        }
+      }
+    }
+  }
+}
+
+@include tablet {
+  mat-card {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

@@ -1,0 +1,70 @@
+@import "../../config";
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+
+.nav {
+
+  &__list {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 56px;
+    background-color: #D4213D;
+    width: 100%;
+    z-index: 1000;
+    box-shadow: 0 2px 5px #555;
+    display: none;
+
+    &--show {
+      display: block;
+    }
+  }
+
+  &__item {
+    line-height: 40px;
+    text-align: center;
+
+    a {
+      text-decoration: none;
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+}
+
+@media all and (min-width: 600px) {
+  .nav {
+    &__list {
+      top: 64px
+
+    }
+  }
+}
+
+@include tablet {
+  .nav {
+    &__list {
+      display: block;
+      position: static;
+      background-color: transparent;
+      box-shadow: none;
+    }
+
+    &__item {
+      display: inline-block;
+      margin-left: 20px;
+    }
+
+    &__button {
+      display: none;
+    }
+  }
+}

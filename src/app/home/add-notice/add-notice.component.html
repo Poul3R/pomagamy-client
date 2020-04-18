@@ -1,0 +1,80 @@
+<div class="global-container">
+  <mat-card>
+    <mat-card-title>Dodaj ogłoszenie o potrzebie pomocy</mat-card-title>
+    <mat-card-content>
+      <ul>
+        <li>Obowiązkowe są wyłącznie pola oznaczone gwiazdką (*). Jeśli nie podasz hasła, Twoje konto nie zostanie
+          utworzone,
+          co uniemożliwi ewentualną edycję ogłoszenia.
+        </li>
+        <li>
+          Twoje dane takie jak imię, email oraz ewentualny numer telefonu będą widowczne tylko dla zarejestrowanych
+          osób użytkowników.
+        </li>
+        <li>Twoje konto wraz ze wszystkimi danymi może zostać skasowane w każdej chwili.</li>
+      </ul>
+      <mat-divider></mat-divider>
+      <form>
+        <form class="form">
+
+          <div class="form__row">
+
+            <mat-form-field>
+              <mat-label>Imię *</mat-label>
+              <input matInput placeholder="Ex. pat@example.com">
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Numer telefonu</mat-label>
+              <input matInput placeholder="Np. 11 222 33 44">
+              <mat-hint>Domowy lub komórkowy. Wprowadź wyłącznie cyfry.</mat-hint>
+            </mat-form-field>
+          </div>
+
+          <div class="form__row">
+            <mat-form-field>
+              <mat-label>E-mail *</mat-label>
+              <input matInput placeholder="Ex. pat@example.com">
+
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Hasło</mat-label>
+              <input matInput placeholder="Ex. pat@example.com">
+
+            </mat-form-field>
+          </div>
+          <div class="form__row">
+
+            <mat-form-field>
+              <mat-label>Miasto *</mat-label>
+              <input matInput placeholder="Ex. pat@example.com">
+
+            </mat-form-field>
+
+            <mat-form-field>
+              <mat-label>Województwo *</mat-label>
+              <mat-select>
+                <mat-option *ngFor="let voivodeship of voivodeships" [value]="voivodeship.value">
+                  {{voivodeship.viewValue}}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+
+          </div>
+
+
+          <mat-form-field>
+            <mat-label>Treść ogłoszenia *</mat-label>
+            <textarea matInput placeholder="Np. Porzebuję aby ktoś zrobił mi artykułów spożywczych."></textarea>
+            <mat-hint>Nie więcej niż 700 znaków</mat-hint>
+          </mat-form-field>
+          <mat-checkbox>Akceptuję&nbsp;<a href="/">regularmin</a>&nbsp;serwisu.</mat-checkbox>
+
+          <button mat-raised-button color="warn">Dodaj ogłoszenie</button>
+        </form>
+      </form>
+    </mat-card-content>
+  </mat-card>
+</div>
