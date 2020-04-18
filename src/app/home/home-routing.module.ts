@@ -16,7 +16,7 @@ const homeRoute: Routes = [
   {
     path: 'dodaj-ogloszenie',
     component: AddNoticeComponent
-  },
+  }
 ];
 
 @NgModule({
