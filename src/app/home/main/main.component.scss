@@ -23,12 +23,28 @@
   }
 
   &--left {
-    background-color: #fff;
+    background: url('../../../assets/images/help-2.jpg') no-repeat center center;
+    background-size: cover;
+    opacity: 0.75;
+    color: #fff;
+    text-shadow: 0.25vw 0.25vw 0.25vw black;
+  }
+
+  &--left:hover {
+    opacity: 1;
   }
 
   &--right {
-    background-color: #D4213D;
+    background: url('../../../assets/images/help-1.jpg') no-repeat center center;
+    background-size: cover;
+    //background-color: #D4213D;
     color: #fff;
+    opacity: 0.75;
+    text-shadow: 0.25vw 0.25vw 0.25vw black;
+  }
+
+  &--right:hover {
+    opacity: 1;
   }
 }
 
