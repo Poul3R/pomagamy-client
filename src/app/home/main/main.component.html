@@ -1,28 +1,29 @@
 <div class="global-container">
-    <form class="city-form-center">
-        <mat-form-field appearance="standard">
-            <mat-label>Wprowadź miasto</mat-label>
-            <input matInput>
-        </mat-form-field>
-    </form><br /><br />
-    <div class="notice-list">
-        <table mat-table>
-            <td mat-cell style="color: red"><b>WYSOKI PRIORYTET</b>
-                <tr mat-row><app-notice></app-notice></tr>
-                <tr mat-row><app-notice></app-notice></tr>
-                <tr mat-row><app-notice></app-notice></tr>
-                <tr mat-row><app-notice></app-notice></tr>
-                <tr mat-row><app-notice></app-notice></tr>
-                <tr mat-row><app-notice></app-notice></tr>
-            </td>
-            <td mat-cell style="color: green"><b>STANDARDOWY PRIORYTET</b>
-                <tr mat-row><app-notice></app-notice></tr>
-                <tr mat-row><app-notice></app-notice></tr>
-                <tr mat-row><app-notice></app-notice></tr>
-                <tr mat-row><app-notice></app-notice></tr>
-                <tr mat-row><app-notice></app-notice></tr>
-                <tr mat-row><app-notice></app-notice></tr>
-            </td>
-        </table>
+
+  <form class="city-form-center">
+    <mat-form-field appearance="standard">
+      <mat-label>Wprowadź miasto</mat-label>
+      <input matInput>
+    </mat-form-field>
+  </form>
+
+
+  <div class="notice-list">
+
+    <div class="notice-list__col">
+      <h3>WYSOKI PRIORYTET</h3>
+      <div class="notice-list__wrapper">
+        <app-notice [notice]="notice" *ngFor="let notice of noticesPriority"></app-notice>
+      </div>
     </div>
+
+    <div class="notice-list__col">
+
+      <h3>STANDARDOWY PRIORYTET</h3>
+      <div class="notice-list__wrapper">
+        <app-notice [notice]="notice" *ngFor="let notice of noticesStandard"></app-notice>
+      </div>
+
+    </div>
+  </div>
 </div>

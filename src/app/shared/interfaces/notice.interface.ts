@@ -4,4 +4,8 @@ export class NoticeInterface {
   city: string;
   phone?: string;
   email: string;
+  description: string;
+  dateStart: Date;
+  dateEnd: Date;
+  priority: boolean;
 }

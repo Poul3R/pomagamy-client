@@ -1,4 +1,6 @@
-import { Component, OnInit, NgModule } from '@angular/core';
+import {Component, OnInit, NgModule} from '@angular/core';
+import {NoticeService} from '../../shared/services/notice.service';
+import {NoticeInterface} from '../../shared/interfaces/notice.interface';
 
 @Component({
   selector: 'app-main',
@@ -7,24 +9,30 @@ import { Component, OnInit, NgModule } from '@angular/core';
 })
 
 export class MainComponent implements OnInit {
+  noticesStandard: NoticeInterface[] = [];
+  noticesPriority: NoticeInterface[] = [];
 
-  constructor() { }
+  cities: [
+    'Warszawa',
+    'Kraków',
+    'Wrocław',
+    'Gdańsk',
+    'Gdynia',
+    'Sopot',
+    'Zakopane',
+    'Malbork',
+    'Katowice',
+    'Szczecin',
+    'Kielce',
+    'Olsztyn'
+  ];
+
+  constructor(private noticeService: NoticeService) {
+  }
 
   ngOnInit(): void {
-    cities: [
-      "Warszawa",
-      "Kraków",
-      "Wrocław",
-      "Gdańsk",
-      "Gdynia",
-      "Sopot",
-      "Zakopane",
-      "Malbork",
-      "Katowice",
-      "Szczecin",
-      "Kielce",
-      "Olsztyn"
-    ]
+    this.noticesStandard = this.noticeService.getNoticeStandardList('');
+    this.noticesPriority = this.noticeService.getNoticePriorityList('');
   }
 
 }
