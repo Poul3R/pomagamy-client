@@ -1,3 +1,5 @@
+@import "../../shared/config";
+
 .category-selector {
   width: 100vw;
   height: 100vh;
@@ -11,8 +13,14 @@
   justify-content: center;
   align-items: center;
   text-decoration: none;
-
+  font-weight: bold;
+  font-style: italic;
   color: #000;
+  transition: all 300ms ease-out;
+
+  &:hover {
+    font-size: 20px;
+  }
 
   &--left {
     background-color: #fff;
@@ -20,5 +28,17 @@
 
   &--right {
     background-color: #D4213D;
+    color: #fff;
+  }
+}
+
+@include desktop {
+  .category-selector {
+    display: flex;
+  }
+
+  .category-selector__box {
+    height: 100%;
+    width: 50%;
   }
 }
