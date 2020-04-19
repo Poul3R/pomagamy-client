@@ -10,12 +10,12 @@
 
     <mat-card-subtitle>
       <mat-icon>email</mat-icon>
-      <a href="mailto:{{notice.email}}">&nbsp;&nbsp;{{notice.email}}</a>
+      <span>&nbsp;&nbsp;{{notice.email}}</span>
     </mat-card-subtitle>
 
     <mat-card-subtitle>
       <mat-icon>phone</mat-icon>
-      <a href="tel:{{notice.phone}}">&nbsp;&nbsp;{{notice.phone}}</a>
+      <span >&nbsp;&nbsp;{{notice.phone}}</span>
     </mat-card-subtitle>
 
     <mat-card-subtitle>
@@ -30,14 +30,25 @@
 
   </mat-card-content>
   <mat-card-actions *ngIf="inProgress === true">
-    <button mat-raised-button color="primary">
-      <mat-icon>chat</mat-icon><span>&nbsp;Napisz wiadomość</span>
-    </button>
-    <button mat-raised-button class="button--success">
-      <mat-icon>done</mat-icon><span>&nbsp;Zakończone sukcesem</span>
-    </button>
-    <button mat-button color="warn">
-      <mat-icon>cancel</mat-icon><span>&nbsp;Zrezygnuj</span>
-    </button>
+    <div class="action-row">
+      <a href="mailto:{{notice.email}}" mat-raised-button color="primary">
+        <mat-icon>email</mat-icon>
+        <span>&nbsp;&nbsp;Napisz email</span>
+      </a>
+      <a href="tel:{{notice.phone}}" mat-raised-button color="primary">
+        <mat-icon>phone</mat-icon>
+        <span>&nbsp;&nbsp;Zadzwoń</span>
+      </a>
+    </div>
+    <div class="action-row">
+      <button mat-raised-button class="button--success">
+        <mat-icon>done</mat-icon>
+        <span>&nbsp;&nbsp;Zakończone sukcesem</span>
+      </button>
+      <button mat-button color="warn">
+        <mat-icon>cancel</mat-icon>
+        <span>&nbsp;&nbsp;Zrezygnuj</span>
+      </button>
+    </div>
   </mat-card-actions>
 </mat-card>

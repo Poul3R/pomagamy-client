@@ -29,6 +29,7 @@ export class UserService {
       city: 'Gdańsk',
       name: 'Jan Kowalski',
       priority: true,
+      district: 'Morena'
     },
     {
       id: 'ninpinpnm 33',
@@ -50,7 +51,7 @@ export class UserService {
       dateStart: new Date(),
       city: 'Gdańsk',
       name: 'Jan Kowalski',
-      priority: false
+      priority: false,
     },
   ];
 
