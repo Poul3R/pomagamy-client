@@ -8,4 +8,5 @@ export class NoticeInterface {
   dateStart: Date;
   dateEnd: Date;
   priority: boolean;
+  district?: string;
 }

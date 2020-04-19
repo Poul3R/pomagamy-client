@@ -17,7 +17,8 @@ export class NoticeService {
       dateStart: new Date(),
       city: 'Gdańsk',
       name: 'Jan Kowalski',
-      priority: false
+      priority: false,
+      district: 'Morena'
     },
     {
       id: 'ninpinpnm 22',
@@ -29,6 +30,7 @@ export class NoticeService {
       city: 'Gdańsk',
       name: 'Jan Kowalski',
       priority: true,
+      district: 'Wrzeszcz'
     },
     {
       id: 'ninpinpnm 33',

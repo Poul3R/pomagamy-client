@@ -10,16 +10,16 @@
 
   <div class="notice-list">
 
-    <div class="notice-list__col">
-      <h3>WYSOKI PRIORYTET</h3>
+    <div class="col">
+      <h3 class="col__title">WYSOKI PRIORYTET</h3>
       <div class="notice-list__wrapper">
         <app-notice [notice]="notice" *ngFor="let notice of noticesPriority"></app-notice>
       </div>
     </div>
 
-    <div class="notice-list__col">
+    <div class="col">
 
-      <h3>STANDARDOWY PRIORYTET</h3>
+      <h3 class="col__title">STANDARDOWY PRIORYTET</h3>
       <div class="notice-list__wrapper">
         <app-notice [notice]="notice" *ngFor="let notice of noticesStandard"></app-notice>
       </div>
