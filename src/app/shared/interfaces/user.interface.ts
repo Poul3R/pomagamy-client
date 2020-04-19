@@ -6,4 +6,5 @@ export class UserInterface {
   voivodeship: string;
   password: string;
   phone?: string;
+  role: string;
 }

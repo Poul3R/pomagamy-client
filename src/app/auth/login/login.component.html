@@ -1,23 +1,53 @@
 <div class="global-container">
-    <mat-card>
-        <mat-card-title>Logowanie</mat-card-title>
-        <mat-card-content>
-            <form>
-            <mat-form-field class="example-full-width">
-                <mat-label>Adres e-mail</mat-label>
-                <input matInput placeholder="Np. pat@example.com">
-            </mat-form-field>
-            <mat-form-field class="example-full-width">
-                <mat-label>Hasło</mat-label>
-                <input matInput type="password">
-            </mat-form-field>
-            </form>
-            <button mat-button>
-                Zaloguj
-            </button>
-            <button mat-button>
-                <a routerLink="../registration">Zarejestruj</a>
-            </button>
-        </mat-card-content>
-    </mat-card>
+  <mat-card>
+    <mat-card-header>
+      <mat-card-title>Logowanie</mat-card-title>
+    </mat-card-header>
+    <mat-card-content>
+      <form>
+        <mat-form-field appearance="outline">
+          <mat-label>Adres e-mail</mat-label>
+          <input matInput>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Hasło</mat-label>
+          <input matInput type="password">
+        </mat-form-field>
+
+        <button mat-raised-button color="primary">
+          Zaloguj
+        </button>
+      </form>
+
+      <mat-divider></mat-divider>
+
+      <div class="registration">
+        <p class="registration__question">
+          Nie masz jeszcze konta?
+        </p>
+
+        <div class="registration__wrapper">
+          <span>Jeśli potrzebujesz pomocy &nbsp;</span>
+          <a href="dodaj-ogloszenie" >dodaj ogłoszenie</a>
+        </div>
+
+        <div class="registration__wrapper">
+          <span>Jeśli chcesz pomagać innym &nbsp;</span>
+          <a href="auth/rejestracja" >zarejestruj się</a>
+        </div>
+      </div>
+
+      <mat-divider></mat-divider>
+
+      <div class="retrive">
+        <p class="retrive__question">
+          Problem z logowaniem?
+        </p>
+        <div class="retrive__wrapper">
+          <button mat-button class="retrive__button">Odzysjak hasło</button>
+        </div>
+      </div>
+    </mat-card-content>
+  </mat-card>
 </div>

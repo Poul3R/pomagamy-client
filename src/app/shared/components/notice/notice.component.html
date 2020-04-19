@@ -1,11 +1,18 @@
 <mat-card>
   <mat-card-header>
     <mat-card-title>
-      {{notice.city}} <span *ngIf="notice.district">- {{notice.district}}</span>
+      <mat-icon>location_on</mat-icon>
+      <span>{{notice.city}}</span>
+      <span *ngIf="notice.district">&nbsp;-&nbsp;{{notice.district}}</span>
     </mat-card-title>
     <mat-card-subtitle>
-      <div>Data ogłoszenia: {{notice.dateStart | date}}</div>
-      <div>Data wygaśnięcia: {{notice.dateEnd | date}}</div>
+      <mat-icon>today</mat-icon>
+      <span>&nbsp;&nbsp;Dodane: {{notice.dateStart | date}}</span>
+    </mat-card-subtitle>
+
+    <mat-card-subtitle>
+      <mat-icon>today</mat-icon>
+      <span>&nbsp;&nbsp;Wygasa: {{notice.dateEnd | date}}</span>
     </mat-card-subtitle>
   </mat-card-header>
 

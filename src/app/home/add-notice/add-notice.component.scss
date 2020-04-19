@@ -6,6 +6,16 @@ mat-card {
   margin: 0 auto;
 }
 
+mat-card-subtitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  span {
+    margin-left: 7px;
+  }
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -31,6 +41,10 @@ mat-card {
 
 @include tablet {
   .form {
+    mat-form-field {
+      margin-bottom: 10px;
+
+    }
     &__row {
       flex-direction: row;
 
@@ -46,6 +60,10 @@ mat-card {
           margin-left: 10px;
         }
       }
+    }
+
+    mat-checkbox {
+      margin-bottom: 10px;
     }
   }
 }

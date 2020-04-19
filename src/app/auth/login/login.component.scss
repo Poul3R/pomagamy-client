@@ -4,25 +4,57 @@
 $grid-gap: 20px;
 
 mat-card {
-    width: 95%;
-    max-width: 600px;
-    margin: 5% auto;
-  }
-  
-  mat-form-field {
-    width: calc(100% - 50px);
-  
-  }
-  
-  button {
-    width: 50%;    
-    background: greenyellow;
-  }
-  
-  button:last-child {
-      background: skyblue;
+  width: 95%;
+  max-width: 400px;
+  margin: 5% auto;
+}
+
+mat-form-field {
+  width: 100%
+
+}
+
+button {
+  display: block;
+  margin: 0 auto 20px auto;
+}
+
+
+.registration {
+  padding: 20px 0;
+  color: $black87;
+  font-size: 15px;
+  text-align: center;
+
+  &__question {
+    margin-bottom: 15px;
   }
 
-a {
-    text-decoration: none;
+  &__wrapper {
+    a {
+      color: $success-green;
+      font-weight: bold;
+      white-space: nowrap;
+    }
+
+    &:last-child {
+      margin-top: 10px;
+    }
+  }
+}
+
+.retrive {
+  padding-top: 20px;
+  color: $black87;
+  font-size: 15px;
+  text-align: center;
+
+  &__wrapper {
+    display: flex;
+    justify-content: center;
+  }
+
+  &__button {
+    margin: 0;
+  }
 }

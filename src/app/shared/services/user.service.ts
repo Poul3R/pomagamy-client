@@ -62,7 +62,8 @@ export class UserService {
     email: 'pitore@wo.pl',
     password: 'zaq1@WSX',
     voivodeship: 'pomorskie',
-    phone: '123 456 789'
+    phone: '123 456 789',
+    role: 'needy' // volunteer
   };
 
   constructor(private httpClient: HttpClient) {

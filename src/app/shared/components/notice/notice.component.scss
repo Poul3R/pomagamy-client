@@ -2,3 +2,10 @@
   font-weight: bold;
   margin-bottom: 5px;
 }
+
+mat-card-title,
+mat-card-subtitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}

@@ -1,4 +1,4 @@
-<mat-toolbar color="warn">
+<mat-toolbar color="warn" *ngIf="isAuth">
   <div class="navbar">
     <a routerLink="/">Pomagamy</a>
 
@@ -8,12 +8,15 @@
       </button>
 
       <ul class="nav__list" [ngClass]="showNavbar === true ? 'nav__list nav__list--show' : 'nav__list'">
+
+        <li class="nav__item" *ngIf="role === 'volunteer'" ><a routerLink="lista" routerLinkActive="nav__item--active"
+                                 [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Lista ogłoszeń</a>
+        </li>
         <li class="nav__item"><a routerLink="konto" routerLinkActive="nav__item--active"
                                  [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Profil</a></li>
-        <li class="nav__item"><a routerLink="lista" routerLinkActive="nav__item--active"
-                                 [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Lista ogłoszeń</a></li>
         <li class="nav__item"><a routerLink="konto/ustawienia" routerLinkActive="nav__item--active"
-                                 [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Ustawienia konta</a></li>
+                                 [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Ustawienia konta</a>
+        </li>
         <li class="nav__item"><a routerLink="wyloguj" routerLinkActive="nav__item--active"
                                  [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Wyloguj</a></li>
       </ul>
