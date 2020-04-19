@@ -2,7 +2,7 @@ import {Component, Input, OnInit} from '@angular/core';
 import {NoticeInterface} from '../../interfaces/notice.interface';
 import {ActivatedRoute, Router} from '@angular/router';
 import {MatDialog} from '@angular/material/dialog';
-import {ModalComponent} from '../../layout/modal/modal.component';
+import {ConfirmationModalComponent} from '../../layout/modals/confirmation-modal/confirmation-modal.component';
 
 @Component({
   selector: 'app-notice',
@@ -23,7 +23,7 @@ export class NoticeComponent implements OnInit {
   onTake(id: string) {
     // this.router.navigate(['konto']);
 
-    const dialogRef = this.dialog.open(ModalComponent);
+    const dialogRef = this.dialog.open(ConfirmationModalComponent);
 
     dialogRef.afterClosed().subscribe(result => {
       if (result === true) {

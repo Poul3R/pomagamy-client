@@ -10,8 +10,10 @@
             matInput
             formControlName="name"
           >
+          <mat-hint>Nie podawaj swojego nazwiska. Samo imię wystarczy.</mat-hint>
         </mat-form-field>
-        <button mat-mini-fab [disabled]="!nameForm.dirty && nameForm.valid">
+        <button mat-mini-fab
+                [disabled]="(!nameForm.dirty) && (nameForm.valid)">
           <mat-icon>save</mat-icon>
         </button>
       </form>
@@ -31,7 +33,7 @@
         <mat-form-field class="example-full-width">
           <mat-label>Numer telefonu</mat-label>
           <input matInput placeholder="Np. 11 222 33 44" value="{{user.phone}}">
-
+          <mat-hint>Domowy lub komórkowy. Wprowadź wyłącznie cyfry.</mat-hint>
         </mat-form-field>
         <button mat-mini-fab [disabled]="!phoneForm.dirty && phoneForm.valid">
           <mat-icon>save</mat-icon>
@@ -64,8 +66,10 @@
 
       <form [formGroup]="voivodeshipForm" (ngSubmit)="onVoivodeshipFormSubmit()">
         <mat-form-field>
+
           <mat-label>Województwo</mat-label>
-          <mat-select formControl="voivodeship">
+
+          <mat-select formControlName="voivodeship">
             <mat-option
               *ngFor="let voivodeship of voivodeships"
               [value]="voivodeship.value"
@@ -74,6 +78,7 @@
               {{voivodeship.viewValue}}
             </mat-option>
           </mat-select>
+
         </mat-form-field>
         <button mat-mini-fab [disabled]="!voivodeshipForm.dirty && voivodeshipForm.valid">
           <mat-icon>save</mat-icon>

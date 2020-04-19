@@ -1,14 +1,43 @@
 <mat-card>
-  <mat-card-title>Dodatne {{notice.dateStart | date}}</mat-card-title>
+  <mat-card-header>
+    <mat-card-title>Użytkownik: {{notice.name}}</mat-card-title>
+
+    <mat-card-subtitle>
+      <mat-icon>location_on</mat-icon>
+      <span>&nbsp;&nbsp;{{notice.city}}</span>
+      <span *ngIf="notice.district">&nbsp;-&nbsp;{{notice.district}}</span>
+    </mat-card-subtitle>
+
+    <mat-card-subtitle>
+      <mat-icon>email</mat-icon>
+      <a href="mailto:{{notice.email}}">&nbsp;&nbsp;{{notice.email}}</a>
+    </mat-card-subtitle>
+
+    <mat-card-subtitle>
+      <mat-icon>phone</mat-icon>
+      <a href="tel:{{notice.phone}}">&nbsp;&nbsp;{{notice.phone}}</a>
+    </mat-card-subtitle>
+
+    <mat-card-subtitle>
+      <mat-icon>calendar_today</mat-icon>
+      <span>&nbsp;&nbsp;{{notice.dateStart | date}}</span>
+    </mat-card-subtitle>
+
+  </mat-card-header>
+
   <mat-card-content>
     {{notice.description}}
-    <mat-divider></mat-divider>
-    <div>Email: {{notice.email}}</div>
-    <div>Telefon: {{notice.phone}}</div>
+
   </mat-card-content>
   <mat-card-actions *ngIf="inProgress === true">
-    <button mat-raised-button>Zrezygnuj</button>
-    <button mat-raised-button>Napisz wiadomość</button>
-    <button mat-raised-button>Oznacz jako zakończone sukcesem</button>
+    <button mat-raised-button color="primary">
+      <mat-icon>chat</mat-icon><span>&nbsp;Napisz wiadomość</span>
+    </button>
+    <button mat-raised-button class="button--success">
+      <mat-icon>done</mat-icon><span>&nbsp;Zakończone sukcesem</span>
+    </button>
+    <button mat-button color="warn">
+      <mat-icon>cancel</mat-icon><span>&nbsp;Zrezygnuj</span>
+    </button>
   </mat-card-actions>
 </mat-card>

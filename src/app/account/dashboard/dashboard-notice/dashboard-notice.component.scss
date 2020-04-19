@@ -1,0 +1,12 @@
+@import "../../../shared/global";
+
+mat-card-subtitle {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+
+  a {
+    color: $black54;
+    text-decoration: none;
+  }
+}

@@ -1,1 +1,49 @@
 @import "../../shared/global";
+
+$gap: 10px;
+
+
+
+
+.col {
+  max-width: 700px;
+  margin: 0 auto;
+
+  &__header {
+    font-size: 19px;
+    margin-bottom: $gap;
+  }
+
+  &__wrapper {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: $gap;
+  }
+}
+
+
+@include desktop {
+  $gap: 20px;
+
+  .wrapper {
+    display: flex;
+  }
+
+  .col {
+    width: 50%;
+
+    &__header {}
+
+    &__wrapper {
+      grid-gap: $gap;
+    }
+
+    &--left {
+      padding-right: 10px
+    }
+
+    &--right {
+      padding-left: 10px
+    }
+  }
+}

@@ -13,6 +13,20 @@
   background-position: center;
 }
 
+.wrapper {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 10px;
+  position: relative;
+}
+
+.button {
+  &--success {
+    background-color: $success-green;
+    color: #fff;
+  }
+}
 
 @media all and (min-width: 600px) {
   .global-container {

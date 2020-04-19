@@ -1,7 +1,11 @@
 $success-green: #2d8719;
+
+// Default RBGA from Material-Angular
 $accent: #ff4081;
 $warn: #f44336;
 $primary: #3f51b5;
+$black54: rgba(0, 0, 0, 0.54);
+$black87: rgba(0, 0, 0, 0.87);
 
 @mixin smartphone {
   @media all and (min-width: 489px) {
@@ -28,7 +32,7 @@ $primary: #3f51b5;
 }
 
 @mixin desktop-xl {
-  @media all and (min-width: 1199px){
+  @media all and (min-width: 1199px) {
     @content
   }
 }

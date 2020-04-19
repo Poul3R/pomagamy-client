@@ -64,13 +64,13 @@ export class SettingsComponent implements OnInit {
 
   onNameFormSubmit() {
     if (this.nameForm.valid) {
-      console.log(this.nameForm.controls['name'].value);
+      console.log(this.nameForm.controls.name.value);
     }
   }
 
   onEmailFormSubmit() {
     if (this.emailForm.valid) {
-      console.log(this.emailForm.controls['email'].value);
+      console.log(this.emailForm.controls.email.value);
     }
   }
 
@@ -90,5 +90,27 @@ export class SettingsComponent implements OnInit {
     if (this.voivodeshipForm.valid) {
       console.log(this.voivodeshipForm.controls['voivodeship'].value);
     }
+  }
+
+  dataNotChanged(data: string) {
+    console.log('dataChanged called');
+
+    let flag: boolean;
+
+    switch (data) {
+      case 'name':
+        this.nameForm.controls.name.value !== this.user.name ? flag = false : flag = true;
+        break;
+      case 'email':
+        this.emailForm.controls.email.value !== this.user.email ? flag = false : flag = true;
+        break;
+      case 'phone':
+        this.phoneForm.controls.phone.value !== this.user.phone ? flag = false : flag = true;
+        break;
+      default:
+        flag = true;
+    }
+
+    return flag;
   }
 }

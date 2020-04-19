@@ -14,7 +14,7 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import {RouterModule} from '@angular/router';
-import { ModalComponent } from './layout/modal/modal.component';
+import { ConfirmationModalComponent } from './layout/modals/confirmation-modal/confirmation-modal.component';
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
@@ -51,7 +51,7 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dia
     SearchNoticeComponent,
     NoticeComponent,
     NavbarComponent,
-    ModalComponent,
+    ConfirmationModalComponent,
   ],
   providers: [
   ]
