@@ -14,6 +14,8 @@ import {MatCheckboxModule} from '@angular/material/checkbox';
 import {MatIconModule} from '@angular/material/icon';
 import { NavbarComponent } from './layout/navbar/navbar.component';
 import {RouterModule} from '@angular/router';
+import { ModalComponent } from './layout/modal/modal.component';
+import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
 
 @NgModule({
   imports: [
@@ -29,6 +31,7 @@ import {RouterModule} from '@angular/router';
     MatCheckboxModule,
     MatIconModule,
     RouterModule,
+    MatDialogModule,
   ],
   exports: [
     CommonModule,
@@ -42,11 +45,15 @@ import {RouterModule} from '@angular/router';
     MatCheckboxModule,
     MatIconModule,
     NavbarComponent,
+    MatDialogModule,
   ],
   declarations: [
     SearchNoticeComponent,
     NoticeComponent,
     NavbarComponent,
+    ModalComponent,
+  ],
+  providers: [
   ]
 })
 export class SharedModule {

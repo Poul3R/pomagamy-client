@@ -16,6 +16,6 @@
     </mat-card-content>
 
     <mat-card-actions>
-        <button mat-button color="primary">SPRAWDŹ</button>
+        <button mat-button color="primary" (click)="onTake(notice.id)">{{'podejmij się' | uppercase}}</button>
     </mat-card-actions>
 </mat-card>

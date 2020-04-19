@@ -1,0 +1,20 @@
+<div class="modal__wrapper">
+  <h1 mat-dialog-title>Potwierdzenie</h1>
+  <div mat-dialog-content>
+    Potwierdzam, iż podejmę się pomocy dla użytkownika {{'IMIĘ / PSEUDONIM'}}.
+    <mat-divider></mat-divider>
+    Pamiętaj! W każdej chwili możesz zrezygnować z udzielania pomocy.
+    Ogłoszenia zamieszczane są przez osoby w trudnej sytuacji, dlatego jeśli podejmiesz się
+    zadania, zrób co w Twojej mocy abyś nie musiał rezygnować. - POPRAWIC!
+  </div>
+  <mat-dialog-actions>
+    <button mat-raised-button color="primary" [mat-dialog-close]="true" >
+      <mat-icon>insert_emoticon</mat-icon>
+      <span>&nbsp;Pomogę!</span>
+    </button>
+    <button mat-button color="warn" [mat-dialog-close]="false">
+      <mat-icon>cancel</mat-icon>
+      <span>&nbsp;Rezygnuję</span>
+    </button>
+  </mat-dialog-actions>
+</div>

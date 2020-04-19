@@ -9,11 +9,11 @@ const authRoute: Routes = [
     component: LoginComponent
   },
   {
-    path: 'login',
+    path: 'logowanie',
     component: LoginComponent
   },
   {
-    path: 'registration',
+    path: 'rejestracja',
     component: RegistrationComponent
   }
 ];
