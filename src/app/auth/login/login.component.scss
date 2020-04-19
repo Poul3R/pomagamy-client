@@ -1,0 +1,28 @@
+@import "../../shared/config";
+@import "../../shared/global";
+
+$grid-gap: 20px;
+
+mat-card {
+    width: 95%;
+    max-width: 600px;
+    margin: 5% auto;
+  }
+  
+  mat-form-field {
+    width: calc(100% - 50px);
+  
+  }
+  
+  button {
+    width: 50%;    
+    background: greenyellow;
+  }
+  
+  button:last-child {
+      background: skyblue;
+  }
+
+a {
+    text-decoration: none;
+}

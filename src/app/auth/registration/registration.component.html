@@ -1,1 +1,72 @@
-<p>registration works!</p>
+<div class="global-container">
+    <mat-card>
+      <mat-card-title>Rejestracja użytkownika</mat-card-title>
+      <mat-card-content>
+        <form>
+          <mat-form-field class="example-full-width">
+            <mat-label>Imię/Pseudonim</mat-label>
+            <input matInput placeholder="Ex. pat@example.com">
+  
+          </mat-form-field>
+
+        </form>
+  
+        <form>
+          <mat-form-field class="example-full-width">
+            <mat-label>Email</mat-label>
+            <input matInput placeholder="Ex. pat@example.com">
+  
+          </mat-form-field>
+
+        </form>
+  
+        <form>
+          <mat-form-field class="example-full-width">
+            <mat-label>Numer telefonu</mat-label>
+            <input matInput placeholder="Ex. pat@example.com">
+  
+          </mat-form-field>
+
+        </form>
+  
+        <form>
+          <mat-form-field class="example-full-width">
+            <mat-label>Hasło</mat-label>
+            <input matInput placeholder="Ex. pat@example.com">
+  
+          </mat-form-field>
+
+        </form>
+  
+        <form>
+          <mat-form-field class="example-full-width">
+            <mat-label>Miasto</mat-label>
+            <input matInput placeholder="Ex. pat@example.com">
+  
+          </mat-form-field>
+
+        </form>
+  
+        <form>
+          <mat-form-field>
+            <mat-label>Województwo</mat-label>
+            <mat-select>
+              <mat-option *ngFor="let voivodeship of voivodeships" [value]="voivodeship.value">
+                {{voivodeship.viewValue}}
+              </mat-option>
+            </mat-select>
+          </mat-form-field>
+
+  
+        </form>
+        <button mat-button>
+            Zarejestruj
+        </button>
+        <button mat-button>
+            <a routerLink="../login">Zaloguj</a>
+        </button>
+      </mat-card-content>
+    </mat-card>
+  
+  </div>
+  

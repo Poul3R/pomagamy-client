@@ -5,11 +5,16 @@
 
       <form [formGroup]="nameForm" (ngSubmit)="onNameFormSubmit()">
         <mat-form-field class="example-full-width">
+<<<<<<< HEAD
           <mat-label>Imię</mat-label>
           <input
             matInput
             formControlName="name"
           >
+=======
+          <mat-label>Imię/Pseudonim</mat-label>
+          <input matInput placeholder="Ex. pat@example.com">
+>>>>>>> bf1df389d040b09f4bdbf20d145b8d68419e1927
 
         </mat-form-field>
         <button mat-mini-fab [disabled]="!nameForm.dirty && nameForm.valid">
