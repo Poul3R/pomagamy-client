@@ -5,13 +5,14 @@ import {SettingsComponent} from './settings/settings.component';
 
 const accountRoutes: Routes = [
   {
-    path: '',
-    component: DashboardComponent
-  },
-  {
     path: 'ustawienia',
     component: SettingsComponent
-  }
+  },
+  {
+    path: '',
+    component: DashboardComponent,
+    pathMatch: 'full'
+  },
 ];
 
 @NgModule({

@@ -1,16 +1,22 @@
-<mat-toolbar color="warn" class="navbar">
-  <a routerLink="/">Pomagamy</a>
+<mat-toolbar color="warn">
+  <div class="navbar">
+    <a routerLink="/">Pomagamy</a>
 
-  <nav class="nav">
-    <button mat-button class="nav__button">
-      <mat-icon (click)="onToggleMenu()">menu</mat-icon>
-    </button>
+    <nav class="nav">
+      <button mat-button class="nav__button">
+        <mat-icon (click)="onToggleMenu()">menu</mat-icon>
+      </button>
 
-    <ul class="nav__list" [ngClass]="showNavbar === true ? 'nav__list nav__list--show' : 'nav__list'">
-      <li class="nav__item"><a routerLink="konto">Kokpit</a></li>
-      <li class="nav__item"><a routerLink="lista">Lista</a></li>
-      <li class="nav__item"><a routerLink="konto/ustawienia">Ustawienia</a></li>
-      <li class="nav__item"><a routerLink="wyloguj">Wyloguj</a></li>
-    </ul>
-  </nav>
+      <ul class="nav__list" [ngClass]="showNavbar === true ? 'nav__list nav__list--show' : 'nav__list'">
+        <li class="nav__item"><a routerLink="konto" routerLinkActive="nav__item--active"
+                                 [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu(false)">Kokpit</a></li>
+        <li class="nav__item"><a routerLink="lista" routerLinkActive="nav__item--active"
+                                 [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu(false)">Lista ogłoszeń</a></li>
+        <li class="nav__item"><a routerLink="konto/ustawienia" routerLinkActive="nav__item--active"
+                                 [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu(false)">Ustawienia konta</a></li>
+        <li class="nav__item"><a routerLink="wyloguj" routerLinkActive="nav__item--active"
+                                 [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu(false)">Wyloguj</a></li>
+      </ul>
+    </nav>
+  </div>
 </mat-toolbar>

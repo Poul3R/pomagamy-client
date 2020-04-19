@@ -1,13 +1,19 @@
 @import "../../config";
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
+mat-toolbar {
   position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  max-width: 1435px;
+  margin: 0 auto;
 }
 
 .nav {
@@ -29,14 +35,22 @@
   }
 
   &__item {
-    line-height: 40px;
-    text-align: center;
+    height: 40px;
+
+    &--active {
+      background-color: #8d2536;
+    }
 
     a {
       text-decoration: none;
       color: #fff;
       font-size: 14px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100%;
     }
+
   }
 }
 
@@ -44,7 +58,6 @@
   .nav {
     &__list {
       top: 64px
-
     }
   }
 }
@@ -60,7 +73,34 @@
 
     &__item {
       display: inline-block;
-      margin-left: 20px;
+      margin-left: 30px;
+      position: relative;
+
+      &:hover::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        width: 100%;
+        background-color: #8d2536;
+        border-radius: 2px;
+      }
+
+      &--active {
+        background-color: transparent;
+      }
+
+      &--active::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        height: 4px;
+        border-radius: 2px;
+        width: 100%;
+        background-color: #8d2536;
+      }
     }
 
     &__button {
