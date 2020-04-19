@@ -1,22 +1,24 @@
 import {NgModule} from '@angular/core';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import {SettingsComponent} from './settings/settings.component';
-import {InProgressBoxComponent} from './dashboard/in-progress-box/in-progress-box.component';
-import {FinishedBoxComponent} from './dashboard/finished-box/finished-box.component';
 import {AccountRoutingModule} from './account-routing.module';
 import {SharedModule} from '../shared/shared.module';
+import { DashboardNoticeComponent } from './dashboard/dashboard-notice/dashboard-notice.component';
+import {CommonModule} from '@angular/common';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
     AccountRoutingModule,
-    SharedModule
+    SharedModule,
+    ReactiveFormsModule,
+    // CommonModule
   ],
   exports: [],
   declarations: [
     DashboardComponent,
     SettingsComponent,
-    InProgressBoxComponent,
-    FinishedBoxComponent,
+    DashboardNoticeComponent,
   ]
 })
 export class AccountModule {

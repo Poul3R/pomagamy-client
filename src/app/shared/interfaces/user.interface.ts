@@ -3,5 +3,7 @@ export class UserInterface {
   name: string;
   email: string;
   city: string;
+  voivodeship: string;
   password: string;
+  phone?: string;
 }

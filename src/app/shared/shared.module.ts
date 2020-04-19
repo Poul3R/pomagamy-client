@@ -17,6 +17,7 @@ import {RouterModule} from '@angular/router';
 
 @NgModule({
   imports: [
+    CommonModule,
     SharedRoutingModule,
     MatCardModule,
     MatFormFieldModule,
@@ -24,13 +25,13 @@ import {RouterModule} from '@angular/router';
     MatButtonModule,
     MatListModule,
     MatToolbarModule,
-    CommonModule,
     MatSelectModule,
     MatCheckboxModule,
     MatIconModule,
     RouterModule,
   ],
   exports: [
+    CommonModule,
     MatCardModule,
     MatFormFieldModule,
     MatInputModule,
