@@ -1,6 +1,7 @@
 import {Component, OnInit} from '@angular/core';
 import {NoticeService} from '../../services/notice.service';
 import {NoticeInterface} from '../../interfaces/notice.interface';
+import {FormControl, FormGroup} from '@angular/forms';
 
 @Component({
   selector: 'app-search-notice',
@@ -11,6 +12,8 @@ import {NoticeInterface} from '../../interfaces/notice.interface';
 export class SearchNoticeComponent implements OnInit {
   noticesStandard: NoticeInterface[] = [];
   noticesPriority: NoticeInterface[] = [];
+
+  searchForm: FormGroup;
 
   cities: [
     'Warszawa',
@@ -33,6 +36,10 @@ export class SearchNoticeComponent implements OnInit {
   ngOnInit(): void {
     this.noticesStandard = this.noticeService.getNoticeStandardList('');
     this.noticesPriority = this.noticeService.getNoticePriorityList('');
+
+    this.searchForm = new FormGroup({
+      city: new FormControl(null)
+    });
   }
 
 }

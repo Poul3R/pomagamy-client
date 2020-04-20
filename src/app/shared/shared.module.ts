@@ -50,7 +50,6 @@ import {ReactiveFormsModule} from '@angular/forms';
     NavbarComponent,
     MatDialogModule,
     ReactiveFormsModule,
-
   ],
   declarations: [
     SearchNoticeComponent,
