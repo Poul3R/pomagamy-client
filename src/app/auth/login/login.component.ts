@@ -19,6 +19,7 @@ export class LoginComponent implements OnInit {
     // todo:: Odkomentować gdy już będzie można
     // if (this.authService.isAuth()) {
     //   this.router.navigate(['konto']);
+    // return;
     // }
 
     this.loginForm = new FormGroup({
@@ -30,7 +31,7 @@ export class LoginComponent implements OnInit {
   onLoginSubmit() {
     if (this.loginForm.valid) {
       // todo:: Wywołać metodę pobierania tokenu
-      return;
+      this.showCredentialsError = !this.showCredentialsError;
     }
   }
 }

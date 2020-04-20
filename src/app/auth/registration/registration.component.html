@@ -1,72 +1,77 @@
 <div class="global-container">
-    <mat-card>
+  <mat-card>
+    <mat-card-header>
       <mat-card-title>Rejestracja użytkownika</mat-card-title>
-      <mat-card-content>
-        <form>
-          <mat-form-field class="example-full-width">
-            <mat-label>Imię/Pseudonim</mat-label>
-            <input matInput placeholder="Ex. pat@example.com">
-  
-          </mat-form-field>
+    </mat-card-header>
 
-        </form>
-  
-        <form>
-          <mat-form-field class="example-full-width">
-            <mat-label>Email</mat-label>
-            <input matInput placeholder="Ex. pat@example.com">
-  
-          </mat-form-field>
+    <mat-card-content>
 
-        </form>
-  
-        <form>
-          <mat-form-field class="example-full-width">
-            <mat-label>Numer telefonu</mat-label>
-            <input matInput placeholder="Ex. pat@example.com">
-  
-          </mat-form-field>
+      <form [formGroup]="registrationForm" (ngSubmit)="onRegistrationSubmit()">
+        <mat-form-field appearance="outline">
+          <mat-label>Imię / Pseudonim *</mat-label>
+          <input matInput formControlName="name">
+          <mat-hint>Nie podawaj swojego nazwiska. Imię lub pseudonim wystarczy.</mat-hint>
+          <mat-error *ngIf="registrationForm.controls.name.hasError('required')">Imię lub pseudonim jest wymagane.</mat-error>
+          <mat-error *ngIf="registrationForm.controls.name.hasError('minlength') && !registrationForm.controls.name.hasError('required')">Minimum 3 znaki.</mat-error>
+        </mat-form-field>
 
-        </form>
-  
-        <form>
-          <mat-form-field class="example-full-width">
-            <mat-label>Hasło</mat-label>
-            <input matInput placeholder="Ex. pat@example.com">
-  
-          </mat-form-field>
 
-        </form>
-  
-        <form>
-          <mat-form-field class="example-full-width">
-            <mat-label>Miasto</mat-label>
-            <input matInput placeholder="Ex. pat@example.com">
-  
-          </mat-form-field>
+        <mat-form-field appearance="outline">
+          <mat-label>Adres e-mail *</mat-label>
+          <input matInput formControlName="email">
+          <mat-error *ngIf="registrationForm.controls.email.hasError('required')">Email jest wymagany.</mat-error>
+          <mat-error *ngIf="registrationForm.controls.email.hasError('email') && !registrationForm.controls.email.hasError('required')">Niepoprawny format adresu e-mail.</mat-error>
+        </mat-form-field>
 
-        </form>
-  
-        <form>
-          <mat-form-field>
-            <mat-label>Województwo</mat-label>
-            <mat-select>
-              <mat-option *ngFor="let voivodeship of voivodeships" [value]="voivodeship.value">
-                {{voivodeship.viewValue}}
-              </mat-option>
-            </mat-select>
-          </mat-form-field>
 
-  
-        </form>
-        <button mat-button>
-            Zarejestruj
+        <mat-form-field appearance="outline">
+          <mat-label>Numer telefonu</mat-label>
+          <input matInput>
+          <mat-hint>Domowy lub komórkowy. Wprowadź wyłącznie cyfry.</mat-hint>
+          <mat-error>Podany format numeru telefonu jest niepoprawny.</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Hasło</mat-label>
+          <input matInput formControlName="password">
+          <mat-hint>Minimum 6 znaków.</mat-hint>
+          <mat-error *ngIf="registrationForm.controls.password.hasError('minlength')">Hasło musi się składać z minimum 6 znaków.</mat-error>
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Miasto *</mat-label>
+          <input matInput formControlName="city">
+          <mat-error *ngIf="registrationForm.controls.city.hasError('required')">Miasto jest wymagane.</mat-error>
+          <mat-error *ngIf="registrationForm.controls.city.hasError('minlength') && !registrationForm.controls.city.hasError('required')">Podaj właściwą nazwę miasta.</mat-error>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Województwo *</mat-label>
+          <mat-select formControlName="voivodeship">
+            <mat-option *ngFor="let voivodeship of voivodeships" [value]="voivodeship.value">
+              {{voivodeship.viewValue}}
+            </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Dzielnica</mat-label>
+          <input matInput formControlName="district">
+          <mat-error *ngIf="registrationForm.controls.district.hasError('minlength')">Podaj właściwą nazwę dzielnicy.</mat-error>
+
+        </mat-form-field>
+
+        <mat-checkbox formControlName="terms">Akceptuję <a href="#">regulamin serwisu</a></mat-checkbox>
+        <mat-error *ngIf="registrationForm.controls.terms.hasError('required') && registrationForm.controls.terms.touched">Akceptacja regulaminu jest wymagana</mat-error>
+        <button mat-raised-button color="primary">
+          Utwórz konto
         </button>
-        <button mat-button>
-            <a routerLink="../login">Zaloguj</a>
-        </button>
-      </mat-card-content>
-    </mat-card>
-  
-  </div>
-  
+      </form>
+
+    </mat-card-content>
+  </mat-card>
+
+</div>
+
