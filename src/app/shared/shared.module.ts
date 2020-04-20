@@ -16,6 +16,7 @@ import { NavbarComponent } from './layout/navbar/navbar.component';
 import {RouterModule} from '@angular/router';
 import { ConfirmationModalComponent } from './layout/modals/confirmation-modal/confirmation-modal.component';
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
+import {DescriptionPreviewPipe} from './pipes/description-preview.pipe';
 
 @NgModule({
   imports: [
@@ -52,6 +53,7 @@ import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dia
     NoticeComponent,
     NavbarComponent,
     ConfirmationModalComponent,
+    DescriptionPreviewPipe
   ],
   providers: [
   ]

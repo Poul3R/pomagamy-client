@@ -2,7 +2,7 @@
   <mat-card-header>
     <mat-card-title>
       <mat-icon>location_on</mat-icon>
-      <span>{{notice.city}}</span>
+      <span>&nbsp;{{notice.city}}</span>
       <span *ngIf="notice.district">&nbsp;-&nbsp;{{notice.district}}</span>
     </mat-card-title>
     <mat-card-subtitle>
@@ -18,7 +18,7 @@
 
   <mat-card-content>
     <p class="notice__desc-header">Opis:</p>
-    <p>{{notice.description}}</p>
+    <p>{{notice.description | descriptionPreview}}</p>
   </mat-card-content>
 
   <mat-card-actions>
