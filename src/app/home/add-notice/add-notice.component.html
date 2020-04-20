@@ -22,67 +22,79 @@
     </mat-card-subtitle>
 
     <mat-card-content>
-      <form>
-        <form class="form">
+      <form class="form" [formGroup]="addNoticeForm" (ngSubmit)="onAddNoticeFormSubmit()">
 
-          <div class="form__row">
-
-            <mat-form-field appearance="outline">
-              <mat-label>Imię *</mat-label>
-              <input matInput placeholder="Ex. pat@example.com">
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>Numer telefonu</mat-label>
-              <input matInput placeholder="Np. 11 222 33 44">
-              <mat-hint>Domowy lub komórkowy. Wprowadź wyłącznie cyfry.</mat-hint>
-            </mat-form-field>
-          </div>
-
-          <div class="form__row">
-            <mat-form-field appearance="outline">
-              <mat-label>E-mail *</mat-label>
-              <input matInput placeholder="Ex. pat@example.com">
-
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>Hasło</mat-label>
-              <input matInput placeholder="Ex. pat@example.com">
-              <mat-hint>Minimum 6 znaków.</mat-hint>
-            </mat-form-field>
-          </div>
-          <div class="form__row">
-
-            <mat-form-field appearance="outline">
-              <mat-label>Miasto *</mat-label>
-              <input matInput placeholder="Np. Warszawa">
-
-            </mat-form-field>
-
-            <mat-form-field appearance="outline">
-              <mat-label>Województwo *</mat-label>
-              <mat-select>
-                <mat-option *ngFor="let voivodeship of voivodeships" [value]="voivodeship.value">
-                  {{voivodeship.viewValue}}
-                </mat-option>
-              </mat-select>
-            </mat-form-field>
-
-
-          </div>
-
+        <div class="form__row">
 
           <mat-form-field appearance="outline">
-            <mat-label>Treść ogłoszenia *</mat-label>
-            <textarea matInput placeholder="Np. Porzebuję aby ktoś zrobił mi artykułów spożywczych."></textarea>
-            <mat-hint>Nie więcej niż 700 znaków</mat-hint>
+            <mat-label>Imię / Pseudonim *</mat-label>
+            <input matInput formControlName="name">
+            <mat-hint>Nie podawaj swojego nazwiska. Imię lub pseudonim wystarczy.</mat-hint>
+            <mat-error *ngIf="addNoticeForm.controls.name.hasError('required')">Imię lub pseudonim jest wymagane.</mat-error>
+            <mat-error *ngIf="addNoticeForm.controls.name.hasError('minlength') && !addNoticeForm.controls.name.hasError('required')">Minimum 3 znaki.</mat-error>
           </mat-form-field>
 
-          <mat-checkbox>Akceptuję&nbsp;<a href="/">regularmin</a>&nbsp;serwisu.</mat-checkbox>
+          <mat-form-field appearance="outline">
+            <mat-label>Numer telefonu</mat-label>
+            <input matInput formControlName="phone">
+            <mat-hint>Domowy lub komórkowy. Wprowadź wyłącznie cyfry.</mat-hint>
+            <mat-error>Podany format numeru telefonu jest niepoprawny.</mat-error>
+          </mat-form-field>
+        </div>
 
-          <button mat-raised-button class="button--success">Dodaj ogłoszenie</button>
-        </form>
+        <div class="form__row">
+          <mat-form-field appearance="outline">
+            <mat-label>Adres e-mail *</mat-label>
+            <input matInput formControlName="email">
+            <mat-error *ngIf="addNoticeForm.controls.email.hasError('required')">Email jest wymagany.</mat-error>
+            <mat-error *ngIf="addNoticeForm.controls.email.hasError('email') && !addNoticeForm.controls.email.hasError('required')">Niepoprawny format adresu e-mail.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Hasło</mat-label>
+            <input matInput formControlName="password">
+            <mat-hint>Minimum 6 znaków.</mat-hint>
+            <mat-error *ngIf="addNoticeForm.controls.password.hasError('minlength')">Hasło musi się składać z minimum 6 znaków.</mat-error>
+          </mat-form-field>
+        </div>
+        <div class="form__row">
+
+          <mat-form-field appearance="outline">
+            <mat-label>Miasto *</mat-label>
+            <input matInput formControlName="city">
+            <mat-error *ngIf="addNoticeForm.controls.city.hasError('required')">Miasto jest wymagane.</mat-error>
+            <mat-error *ngIf="addNoticeForm.controls.city.hasError('minlength') && !addNoticeForm.controls.city.hasError('required')">Podaj właściwą nazwę miasta.</mat-error>
+          </mat-form-field>
+
+          <mat-form-field appearance="outline">
+            <mat-label>Województwo *</mat-label>
+            <mat-select formControlName="voivodeship">
+              <mat-option *ngFor="let voivodeship of voivodeships" [value]="voivodeship.value">
+                {{voivodeship.viewValue}}
+              </mat-option>
+            </mat-select>
+            <mat-error *ngIf="addNoticeForm.controls.voivodeship.hasError('required')">Województwo jest wymagane.</mat-error>
+          </mat-form-field>
+        </div>
+
+        <mat-form-field appearance="outline">
+          <mat-label>Dzielnica</mat-label>
+          <input matInput formControlName="district">
+          <mat-error *ngIf="addNoticeForm.controls.district.hasError('minlength')">Podaj właściwą nazwę dzielnicy.</mat-error>
+
+        </mat-form-field>
+
+
+        <mat-form-field appearance="outline">
+          <mat-label>Treść ogłoszenia *</mat-label>
+          <textarea matInput formControlName="description" placeholder="Np. Porzebuję aby ktoś zrobił zakupy mi artykułów spożywczych."></textarea>
+          <mat-hint>Nie więcej niż 700 znaków</mat-hint>
+        </mat-form-field>
+
+        <mat-checkbox formControlName="terms">Akceptuję&nbsp;<a href="/">regularmin</a>&nbsp;serwisu.</mat-checkbox>
+        <mat-error *ngIf="addNoticeForm.controls.terms.hasError('required') && addNoticeForm.controls.terms.touched">Akceptacja regulaminu jest wymagana</mat-error>
+
+        <button mat-raised-button class="button--success">Dodaj ogłoszenie</button>
       </form>
     </mat-card-content>
   </mat-card>

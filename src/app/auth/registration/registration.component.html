@@ -54,6 +54,7 @@
               {{voivodeship.viewValue}}
             </mat-option>
           </mat-select>
+          <mat-error *ngIf="registrationForm.controls.voivodeship.hasError('required')">Województwo jest wymagane.</mat-error>
         </mat-form-field>
 
         <mat-form-field appearance="outline">

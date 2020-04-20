@@ -17,6 +17,7 @@ import {RouterModule} from '@angular/router';
 import { ConfirmationModalComponent } from './layout/modals/confirmation-modal/confirmation-modal.component';
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
 import {DescriptionPreviewPipe} from './pipes/description-preview.pipe';
+import {ReactiveFormsModule} from '@angular/forms';
 
 @NgModule({
   imports: [
@@ -33,6 +34,7 @@ import {DescriptionPreviewPipe} from './pipes/description-preview.pipe';
     MatIconModule,
     RouterModule,
     MatDialogModule,
+    ReactiveFormsModule,
   ],
   exports: [
     CommonModule,
@@ -47,6 +49,8 @@ import {DescriptionPreviewPipe} from './pipes/description-preview.pipe';
     MatIconModule,
     NavbarComponent,
     MatDialogModule,
+    ReactiveFormsModule,
+
   ],
   declarations: [
     SearchNoticeComponent,

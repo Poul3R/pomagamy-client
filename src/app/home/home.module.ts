@@ -9,10 +9,10 @@ import { AddNoticeComponent } from './add-notice/add-notice.component';
     MainComponent,
     AddNoticeComponent
   ],
-  imports: [
-    HomeRoutingModule,
-    SharedModule,
-  ],
+    imports: [
+        HomeRoutingModule,
+        SharedModule,
+    ],
   exports: [],
 })
 export class HomeModule {
