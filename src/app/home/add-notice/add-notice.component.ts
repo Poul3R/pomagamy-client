@@ -28,19 +28,23 @@ export class AddNoticeComponent implements OnInit {
   }
 
   ngOnInit(): void {
-    if (this.authService.isAuth()) {
-      if (this.authService.getRole() === 'needy') {
-        const user = this.userService.getUserData();
+    // todo:: Przechodziąc ze strony głównej do "dodaj-ogłoszenie" (jako volonratiusz) wysypuję błąd formularza.!! Naprawić
+    // if (this.authService.isAuth()) {
+    //   if (this.authService.getRole() === 'needy') {
+    //     const user = this.userService.getUserData();
+    //
+    //     this.initForm(user);
+    //
+    //     this.disableAccountFields = true;
+    //   } else {
+    //     this.router.navigate(['konto']);
+    //     return;
+    //   }
+    // } else {
+    //   this.initForm();
+    // }
+    this.initForm();
 
-        this.initForm(user);
-
-        this.disableAccountFields = true;
-      } else {
-        this.router.navigate(['konto']);
-      }
-    } else {
-      this.initForm();
-    }
   }
 
   initForm(user?: UserInterface) {
