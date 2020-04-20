@@ -1,3 +1,40 @@
+@import "../../../global";
+
 .modal__wrapper {
   max-width: 400px;
+}
+
+.subtitle {
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: $black54;
+
+  &__row {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+  }
+}
+
+.content__row {
+  font-size: 14px;
+}
+
+.content__row:first-child {
+  padding-bottom: 15px;
+}
+
+.content__row:last-child {
+  padding: 15px 0;
+}
+
+.content__paragraph {
+  color: $black54;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  mat-icon {
+    margin-right: 10px;
+  }
 }

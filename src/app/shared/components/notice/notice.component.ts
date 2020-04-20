@@ -16,14 +16,16 @@ export class NoticeComponent implements OnInit {
 
   constructor(private router: Router, public dialog: MatDialog) {
   }
-
   ngOnInit(): void {
+
   }
 
-  onTake(id: string) {
+  onShowMore(notice: NoticeInterface) {
     // this.router.navigate(['konto']);
 
-    const dialogRef = this.dialog.open(ConfirmationModalComponent);
+    const dialogRef = this.dialog.open(ConfirmationModalComponent, {
+      data: {notice: notice},
+    });
 
     dialogRef.afterClosed().subscribe(result => {
       if (result === true) {

@@ -1,14 +1,33 @@
 <div class="modal__wrapper">
-  <h1 mat-dialog-title>Potwierdzenie</h1>
+  <h1 mat-dialog-title>Użytkownik {{data.notice.name}}</h1>
+  <div class="subtitle">
+    <div class="subtitle__row">
+      <mat-icon>priority_high</mat-icon>
+      <span>&nbsp;&nbsp;Wysoki priorytet</span>
+    </div>
+    <div class="subtitle__row">
+      <mat-icon>location_on</mat-icon>
+      <span>&nbsp;&nbsp;{{data.notice.city}}</span>
+      <span *ngIf="data.notice.district">&nbsp;-&nbsp;{{data.notice.district}}</span>
+    </div>
+  </div>
   <div mat-dialog-content>
-    Potwierdzam, iż podejmę się pomocy dla użytkownika {{'IMIĘ / PSEUDONIM'}}.
+    <div class="content__row">
+      {{data.notice.description}}
+    </div>
+
     <mat-divider></mat-divider>
-    Pamiętaj! W każdej chwili możesz zrezygnować z udzielania pomocy.
-    Ogłoszenia zamieszczane są przez osoby w trudnej sytuacji, dlatego jeśli podejmiesz się
-    zadania, zrób co w Twojej mocy abyś nie musiał rezygnować. - POPRAWIC!
+
+    <div class="content__row">
+      <p class="content__paragraph">
+        <mat-icon>info</mat-icon>
+        <span>Potwierdź, iż podejmiesz się pomocy użytkownikowi {{data.notice.name}}. Pamiętaj, że ogłoszenia zamieszczane są przez osoby w bardzo trudnej sytuacji, dlatego późniejsza rezygnacja z pomocy może źle wpłynąć na ich morale. --POPRAWIC</span>
+      </p>
+    </div>
+
   </div>
   <mat-dialog-actions>
-    <button mat-raised-button color="primary" [mat-dialog-close]="true" >
+    <button mat-raised-button color="primary" [mat-dialog-close]="true">
       <mat-icon>insert_emoticon</mat-icon>
       <span>&nbsp;Pomogę!</span>
     </button>
