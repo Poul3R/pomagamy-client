@@ -12,6 +12,11 @@
         <li class="nav__item" *ngIf="role === 'volunteer'" ><a routerLink="lista" routerLinkActive="nav__item--active"
                                  [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Lista ogłoszeń</a>
         </li>
+
+        <li class="nav__item" *ngIf="role === 'needy'" ><a routerLink="dodaj-ogloszenie" routerLinkActive="nav__item--active"
+                                                               [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Dodaj ogłoszenie</a>
+        </li>
+
         <li class="nav__item"><a routerLink="konto" routerLinkActive="nav__item--active"
                                  [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Profil</a></li>
         <li class="nav__item"><a routerLink="konto/ustawienia" routerLinkActive="nav__item--active"

@@ -26,7 +26,7 @@
 
         <div class="form__row">
 
-          <mat-form-field appearance="outline">
+          <mat-form-field appearance="outline" >
             <mat-label>Imię / Pseudonim *</mat-label>
             <input matInput formControlName="name">
             <mat-hint>Nie podawaj swojego nazwiska. Imię lub pseudonim wystarczy.</mat-hint>
@@ -52,7 +52,7 @@
 
           <mat-form-field appearance="outline">
             <mat-label>Hasło</mat-label>
-            <input matInput formControlName="password">
+            <input matInput type="password" formControlName="password">
             <mat-hint>Minimum 6 znaków.</mat-hint>
             <mat-error *ngIf="addNoticeForm.controls.password.hasError('minlength')">Hasło musi się składać z minimum 6 znaków.</mat-error>
           </mat-form-field>

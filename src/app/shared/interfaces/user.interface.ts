@@ -7,4 +7,5 @@ export class UserInterface {
   password: string;
   phone?: string;
   role: string;
+  district?: string;
 }
