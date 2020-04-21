@@ -35,6 +35,15 @@
   align-items: center;
 
   mat-icon {
+    margin-top: 5vh;
+    display: inline-flex;
     margin-right: 10px;
   }
+  
+  mat-card-title,
+mat-card-subtitle {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
 }

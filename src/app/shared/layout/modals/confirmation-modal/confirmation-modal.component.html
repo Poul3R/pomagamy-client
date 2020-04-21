@@ -1,20 +1,36 @@
 <div class="modal__wrapper">
-  <h1 mat-dialog-title>Użytkownik {{data.notice.name}}</h1>
+  <h1 mat-dialog-title></h1>
   <div class="subtitle">
     <div class="subtitle__row" *ngIf="data.notice.priority === true">
       <mat-icon>priority_high</mat-icon>
       <span>&nbsp;&nbsp;Wysoki priorytet</span>
     </div>
-    <div class="subtitle__row">
-      <mat-icon>location_on</mat-icon>
-      <span>&nbsp;&nbsp;{{data.notice.city}}</span>
-      <span *ngIf="data.notice.district">&nbsp;-&nbsp;{{data.notice.district}}</span>
-    </div>
-  </div>
-  <div mat-dialog-content>
-    <div class="content__row">
-      {{data.notice.description}}
-    </div>
+    <mat-card-header>
+      <mat-card-title>
+        <mat-icon>location_on</mat-icon>
+        <span>{{data.notice.city}}</span>
+        <span *ngIf="data.notice.district">&nbsp;-&nbsp;{{data.notice.district}}</span>
+      </mat-card-title>
+      <mat-card-subtitle>
+        <mat-icon>account_circle</mat-icon>
+        <span>Osoba dodająca: {{data.notice.name}}</span>
+      </mat-card-subtitle>
+      <mat-card-subtitle>
+        <mat-icon>today</mat-icon>
+        <span>&nbsp;&nbsp;Dodane: {{data.notice.dateStart | date}}</span>
+      </mat-card-subtitle>
+  
+      <mat-card-subtitle>
+        <mat-icon>today</mat-icon>
+        <span>&nbsp;&nbsp;Wygasa: {{data.notice.dateEnd | date}}</span>
+      </mat-card-subtitle>
+    </mat-card-header>
+  
+    <mat-card-content>
+      <p class="notice__desc-header">Pełny opis:</p>
+      <mat-divider></mat-divider><br />
+      <p>{{data.notice.description}}</p>
+    </mat-card-content>
 
     <mat-divider></mat-divider>
 
