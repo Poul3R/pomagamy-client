@@ -1,19 +1,24 @@
 @import "../../config";
 
-mat-toolbar {
-  position: fixed;
+.navbar {
+  position: absolute;
   top: 0;
   left: 0;
   z-index: 1000;
+  height: 56px;
+  width: 100%;
 }
 
-.navbar {
+.navbar__content {
   display: flex;
   justify-content: space-between;
   align-items: center;
   width: 100%;
   max-width: 1435px;
   margin: 0 auto;
+  background-color: $blue-main--darker;
+  padding: 0 15px;
+  height: 100%;
 }
 
 .logo-link {
@@ -35,7 +40,7 @@ mat-toolbar {
     position: absolute;
     left: 0;
     top: 56px;
-    background-color: rgb(33, 117, 212);
+    background-color: $blue-main;
     width: 100%;
     z-index: 1000;
     box-shadow: 0 2px 5px #555;
@@ -50,7 +55,7 @@ mat-toolbar {
     height: 40px;
 
     &--active {
-      background-color: rgb(33, 117, 212);
+      background-color: $blue-main;
     }
 
     a {
@@ -67,6 +72,10 @@ mat-toolbar {
 }
 
 @media all and (min-width: 600px) {
+  .navbar {
+    height: 64px;
+  }
+
   .nav {
     &__list {
       top: 64px
@@ -95,7 +104,7 @@ mat-toolbar {
         left: 0;
         height: 4px;
         width: 100%;
-        background-color: rgb(33, 117, 212);
+        background-color: $blue-main;
         border-radius: 2px;
       }
 
@@ -111,7 +120,7 @@ mat-toolbar {
         height: 4px;
         border-radius: 2px;
         width: 100%;
-        background-color: rgb(33, 117, 212);
+        background-color: $blue-main;
       }
     }
 
