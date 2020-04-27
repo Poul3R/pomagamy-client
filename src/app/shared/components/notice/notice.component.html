@@ -1,28 +1,33 @@
-<div class="notice-card" [ngStyle]="notice.priority === true && {'background': 'rgba(211, 208, 84, 0.9)'} || notice.priority === false && {'background': 'rgba(35, 203, 167, 0.9)'}">
-  <div class="notice-header">
-    <div class="notice-card-title">
+<div class="notice-card" [ngClass]="notice.priority ? 'notice-card--priority' : null">
+  <div class="notice-card__header">
+
+    <div class="notice-card__title">
       <mat-icon>location_on</mat-icon>
       <span>{{notice.city}}</span>
       <span *ngIf="notice.district">&nbsp;-&nbsp;{{notice.district}}</span>
     </div>
-    <div class="notice-card-subtitle-container">
-      <div class="notice-card-subtitle">
+
+    <div class="notice-card__subtitle-wrapper">
+      <div class="notice-card__subtitle">
         <mat-icon>today</mat-icon>
         <span>&nbsp;&nbsp;Dodane: {{notice.dateStart | date}}</span>
       </div>
-      <div class="notice-card-subtitle">
+
+      <div class="notice-card__subtitle">
         <mat-icon>today</mat-icon>
         <span>&nbsp;&nbsp;Wygasa: {{notice.dateEnd | date}}</span>
       </div>
     </div>
+
   </div>
 
-  <div class="notice-content">
-    <p class="notice__desc-header">Opis:</p><hr /><br />
-    <p>{{notice.description | descriptionPreview: 250}}</p>
-  </div><br />
+  <div class="notice-card__content">
+    <p class="notice-card__text-header">Opis:</p>
+    <p class="notice-card__text">{{notice.description | descriptionPreview: 250}}</p>
+  </div>
 
-  <div class="notice-card-actions">
-    <button (click)="onShowMore(notice)" [ngStyle]="notice.priority === true && {'background': 'rgba(255, 109, 107, 0.95);'} || notice.priority === false && {'background': 'rgba(35, 203, 167, 0.9)'}">{{'czytaj więcej' | uppercase}}</button>
+  <div class="notice-card__actions">
+    <button class="notice-card__button" (click)="onShowMore(notice)"
+            [ngClass]="notice.priority ? 'notice-card__button--priority' : null">{{'Zobacz więcej'}}</button>
   </div>
 </div>
