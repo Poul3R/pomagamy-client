@@ -1,12 +1,13 @@
 @import "../../config";
 
 .navbar {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   z-index: 1000;
   height: 56px;
   width: 100%;
+  box-shadow: 4px 0 5px #444;
 }
 
 .navbar__content {

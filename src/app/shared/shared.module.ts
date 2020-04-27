@@ -18,6 +18,7 @@ import { ConfirmationModalComponent } from './layout/modals/confirmation-modal/c
 import {MAT_DIALOG_DEFAULT_OPTIONS, MatDialogModule} from '@angular/material/dialog';
 import {DescriptionPreviewPipe} from './pipes/description-preview.pipe';
 import {ReactiveFormsModule} from '@angular/forms';
+import {NoticeDetailModalComponent} from './layout/modals/notice-detail-modal/notice-detail-modal.component';
 
 @NgModule({
   imports: [
@@ -56,7 +57,8 @@ import {ReactiveFormsModule} from '@angular/forms';
     NoticeComponent,
     NavbarComponent,
     ConfirmationModalComponent,
-    DescriptionPreviewPipe
+    DescriptionPreviewPipe,
+    NoticeDetailModalComponent
   ],
   providers: [
   ]
