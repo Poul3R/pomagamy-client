@@ -1,5 +1,27 @@
 <div class="category-selector">
-  <a routerLink="dodaj-ogloszenie" class="category-selector__box category-selector__box--left">Potrzebuję pomocy</a>
-  <a routerLink="lista" class="category-selector__box category-selector__box--right">Chcę pomóc</a>
+  <div routerLink="dodaj-ogloszenie" class="category-selector__section category-selector__section--left">
+    <div class="box">
+      <div class="box__header">
+        <h1>{{'Potrzebuję' | uppercase}}</h1>
+        <h1>{{'pomocy' | uppercase}}</h1>
+      </div>
+      <div class="box__button">
+        <div class="button-arrow"></div>
+        <div class="button-text">Kliknij tutaj</div>
+      </div>
+    </div>
+  </div>
+  <div routerLink="lista" class="category-selector__section category-selector__section--right">
+    <div class="box">
+      <div class="box__header">
+        <h1>{{'Chcę' | uppercase}}</h1>
+        <h1>{{'pomóc' | uppercase}}</h1>
+      </div>
+      <div class="box__button">
+        <div class="button-text">Kliknij tutaj</div>
+        <div class="button-arrow"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
