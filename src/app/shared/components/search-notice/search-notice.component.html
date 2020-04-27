@@ -11,7 +11,7 @@
   <div class="notice-list">
 
     <div class="col">
-      <h3 class="col__title" style="color:red; text-shadow: 2vw 2vw 2vw black;">WYSOKI PRIORYTET</h3>
+      <h3 class="col__title">{{'pilnie potrzebna pomoc' | uppercase}}</h3>
       <div class="notice-list__wrapper">
         <app-notice [notice]="notice" *ngFor="let notice of noticesPriority"></app-notice>
       </div>
@@ -19,7 +19,7 @@
 
     <div class="col">
 
-      <h3 class="col__title" style="color:green; text-shadow: 2vw 2vw 2vw black;">STANDARDOWY PRIORYTET</h3>
+      <h3 class="col__title">{{'potrzebna pomoc' | uppercase}}</h3>
       <div class="notice-list__wrapper">
         <app-notice [notice]="notice" *ngFor="let notice of noticesStandard"></app-notice>
       </div>

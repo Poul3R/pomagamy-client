@@ -38,7 +38,9 @@ $grid-gap: 20px;
   &__title {
     margin-bottom: 10px;
     font-size: 19px;
-    color: #000
+    color: $black54;
+    letter-spacing: 1px;
+    text-align: center;
   }
 }
 
@@ -50,6 +52,16 @@ $grid-gap: 20px;
     grid-template-columns: 1fr 1fr;
     grid-gap: $grid-gap;
   }
+
+  .col {
+    &__title {
+      margin-bottom: 20px;
+      font-size: 22px;
+      color: $black54;
+      letter-spacing: 1px;
+    }
+  }
+
 }
 
 @include desktop-xl {
@@ -63,6 +75,15 @@ $grid-gap: 20px;
       grid-template-columns: 1fr 1fr;
       grid-gap: $grid-gap;
 
+    }
+  }
+
+  .col {
+    &__title {
+      margin-bottom: 28px;
+      font-size: 25px;
+      color: $black54;
+      letter-spacing: 1px;
     }
   }
 }
