@@ -1,4 +1,4 @@
-<mat-toolbar color="primary" *ngIf="isAuth">
+<mat-toolbar color="primary">
   <div class="navbar">
     <a routerLink="/" class="logo-link">
       <img class="logo-link__img" src="../../../../assets/images/HelpFinderLogo/logo.png" alt="">
@@ -9,7 +9,7 @@
         <mat-icon (click)="onToggleMenu()">menu</mat-icon>
       </button>
 
-      <ul class="nav__list" [ngClass]="showNavbar === true ? 'nav__list nav__list--show' : 'nav__list'">
+      <ul class="nav__list" [ngClass]="showNavbar === true ? 'nav__list--show' : null" *ngIf="!isAuth">
 
         <li class="nav__item" *ngIf="role === 'volunteer'" ><a routerLink="lista" routerLinkActive="nav__item--active"
                                  [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Lista ogłoszeń</a>
@@ -26,6 +26,16 @@
         </li>
         <li class="nav__item"><a routerLink="wyloguj" routerLinkActive="nav__item--active"
                                  [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Wyloguj</a></li>
+      </ul>
+
+      <ul class="nav__list" [ngClass]="showNavbar === true ? 'nav__list--show' : null" *ngIf="!!isAuth">
+
+
+        <li class="nav__item"><a routerLink="/o-aplikacji" routerLinkActive="nav__item--active"
+                                 [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Jak działa aplikacja?</a></li>
+        <li class="nav__item"><a routerLink="/auth/logowanie" routerLinkActive="nav__item--active"
+                                 [routerLinkActiveOptions]="{exact:true}" (click)="onToggleMenu()">Logowanie</a>
+        </li>
       </ul>
     </nav>
   </div>
