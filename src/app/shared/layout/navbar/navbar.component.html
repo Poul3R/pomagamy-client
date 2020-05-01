@@ -5,8 +5,8 @@
     </a>
 
     <nav class="nav">
-      <button mat-button class="nav__button">
-        <mat-icon (click)="onToggleMenu()">menu</mat-icon>
+      <button class="nav__button" (click)="onToggleMenu()">
+        <i class="las la-ellipsis-v"></i>
       </button>
 
       <ul class="nav__list" [ngClass]="showNavbar === true ? 'nav__list--show' : null" *ngIf="isAuth">
