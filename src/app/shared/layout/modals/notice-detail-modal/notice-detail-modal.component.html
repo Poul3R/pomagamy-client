@@ -1,4 +1,4 @@
-<div class="modal-backdrop"></div>
+<div class="modal-backdrop" (click)="onCloseModal()"></div>
 <div class="modal">
   <div class="modal__body">
 
@@ -14,8 +14,8 @@
         <div class="modal__section">
           <div class="modal__title">Do kiedy?</div>
           <div class="modal__content">
-            <div class="content-row">Potrzebne do: {{notice.dateEnd | date: 'full'}}</div>
-            <div class="content-row">Pozostało: niecałe 10 godzin</div>
+            <div class="content-row">Potrzebne do: {{notice.dateEnd | date: 'medium'}}</div>
+<!--            <div class="content-row">Pozostało: niecałe 10 godzin</div>-->
           </div>
         </div>
 
@@ -32,7 +32,7 @@
             <i class="las" [ngClass]="checkboxSelected ? 'la-check-square selected' : 'la-stop'"></i>
             <!--          <i class="las la-check-square"></i>-->
           </div>
-          <p>Potwierdzam zapoznanie się z zasadami i zaleceniami. Chcę podjąć się zadania i
+          <p [ngClass]="errorOccurred ? 'error-mark' : null">Potwierdzam zapoznanie się z zasadami i zaleceniami. Chcę podjąć się zadania i
             pomóc potrzebującemu!</p>
         </div>
       </div>
@@ -49,11 +49,11 @@
           </div>
           <div class="content-row content-row--bold">
             <i class="las la-phone"></i>
-            <span>+48 665 565 666</span>
+            <span>Dostępne po podjęciu zadania</span>
           </div>
           <div class="content-row content-row--bold">
             <i class="las la-envelope"></i>
-            <span>test@gmail.com</span>
+            <span>Dostępne po podjęciu zadania</span>
           </div>
         </div>
       </div>
@@ -99,15 +99,15 @@
           <!--          <i class="las la-check-square"></i>-->
         </div>
         <p>Potwierdzam zapoznanie się z zasadami i zaleceniami. Chcę podjąć się zadania i
-          pomóc potrzebującemu!</p>
+          pomóc potrzebującemu.</p>
       </div>
     </div>
 
-    <button class="modal__button modal__button--green">
+    <button class="button button--success" (click)="onAccept()">
       <i class="las la-smile-wink"></i>
       <span>Podejmij się zadania</span>
     </button>
-    <button class="modal__button modal__button--red">
+    <button class="button button--danger" (click)="onCloseModal()">
       <i class="las la-times-circle"></i>
       <span>Poszukaj innego zlecenia</span>
     </button>

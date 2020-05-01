@@ -30,8 +30,6 @@ export class SearchNoticeComponent implements OnInit {
     'Olsztyn'
   ];
 
-  selectedNotice: NoticeInterface;
-
   constructor(private noticeService: NoticeService) {
   }
 

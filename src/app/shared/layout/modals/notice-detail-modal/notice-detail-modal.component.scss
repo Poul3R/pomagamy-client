@@ -44,38 +44,6 @@
 
   &__footer {
   }
-
-  &__button {
-    outline: none;
-    border: none;
-    height: 35px;
-    padding: 0 15px;
-    cursor: pointer;
-
-    margin: 10px auto 0 auto;
-    display: block;
-
-    &--green {
-      background-color: $success-green;
-      color: #fff;
-    }
-
-    &--red {
-      background-color: transparent;
-      color: #c71919;
-      border: 1px solid #c71919;
-    }
-
-    i {
-      margin-right: 10px;
-      font-size: 20px;
-    }
-
-    span {
-      line-height: 35px;
-    }
-  }
-
 }
 
 .content-row {
@@ -107,6 +75,10 @@
   }
 }
 
+.error-mark {
+  color: $danger-red;
+}
+
 
 @include desktop {
   .modal {
@@ -130,10 +102,6 @@
       display: flex;
       justify-content: flex-start;
       //align-items: center;
-    }
-
-    &__button {
-      margin: 0 20px 0 0;
     }
   }
 

@@ -1,3 +1,5 @@
+<app-notice-detail-modal *ngIf="showModal" [notice]="notice" (displayModal)="onCancelModal()"></app-notice-detail-modal>
+
 <div class="notice-card" [ngClass]="notice.priority ? 'notice-card--priority' : null">
   <div class="notice-card__header">
 
@@ -27,7 +29,7 @@
   </div>
 
   <div class="notice-card__actions">
-    <button class="button" (click)="onShowMore(notice)"
+    <button class="button" (click)="onShowMoreModal(notice)"
             [ngClass]="notice.priority ? 'button--priority' : 'button--standard'">{{'Zobacz więcej'}}</button>
   </div>
 </div>

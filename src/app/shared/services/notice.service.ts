@@ -1,7 +1,10 @@
 import {Injectable} from '@angular/core';
 import {NoticeInterface} from '../interfaces/notice.interface';
 import {ApiService} from './api.service';
-import {HttpParams} from '@angular/common/http';
+import {HttpClient, HttpParams} from '@angular/common/http';
+import {environment} from '../../../environments/environment';
+import {catchError} from 'rxjs/operators';
+import {errorHandler} from './service-utils';
 
 @Injectable({
   providedIn: 'root'
@@ -144,8 +147,9 @@ export class NoticeService {
     }
   ];
 
-  constructor(private apiService: ApiService) {
+  constructor(private httpClient: HttpClient) {
   }
+
 
 
   getNoticeStandardList(city: string) {
@@ -156,5 +160,13 @@ export class NoticeService {
 
   getNoticePriorityList(city: string) {
     return this.noticeList.filter(m => m.priority === true);
+  }
+
+  addNoticeToUser(id: string) {
+    const data = {
+      noticeId: id
+    };
+
+    return this.httpClient.post(`${environment.api_url}`, data).pipe(catchError(errorHandler));
   }
 }
