@@ -1,54 +1,61 @@
-<mat-card>
-  <mat-card-header>
-    <mat-card-title>Użytkownik: {{notice.name}}</mat-card-title>
+<div class="card" [ngClass]="!inProgress ? 'card--end' : null">
+  <div class="card__left">
+    <div class="card__header">
+      <i class="las la-calendar-day header-icon"></i>
+      <span class="card__header--small" *ngIf="inProgress">&nbsp;&nbsp;potrzebne do&nbsp;</span>
+      <span class="card__header--small" *ngIf="!inProgress">&nbsp;&nbsp;zakończone&nbsp;</span>
+      <span>{{notice.dateStart | date}}</span>
+    </div>
 
-    <mat-card-subtitle>
-      <mat-icon>location_on</mat-icon>
-      <span>&nbsp;&nbsp;{{notice.city}}</span>
-      <span *ngIf="notice.district">&nbsp;-&nbsp;{{notice.district}}</span>
-    </mat-card-subtitle>
+    <div class="card__content">
+      {{notice.description}}
+    </div>
 
-    <mat-card-subtitle>
-      <mat-icon>email</mat-icon>
-      <span>&nbsp;&nbsp;{{notice.email}}</span>
-    </mat-card-subtitle>
-
-    <mat-card-subtitle>
-      <mat-icon>phone</mat-icon>
-      <span >&nbsp;&nbsp;{{notice.phone}}</span>
-    </mat-card-subtitle>
-
-    <mat-card-subtitle>
-      <mat-icon>calendar_today</mat-icon>
-      <span>&nbsp;&nbsp;{{notice.dateStart | date}}</span>
-    </mat-card-subtitle>
-
-  </mat-card-header>
-
-  <mat-card-content>
-    {{notice.description}}
-
-  </mat-card-content>
-  <mat-card-actions *ngIf="inProgress === true">
-    <div class="action-row">
-      <a href="mailto:{{notice.email}}" mat-raised-button color="primary">
-        <mat-icon>email</mat-icon>
+    <div class="card__buttons" *ngIf="inProgress">
+      <a href="mailto:{{notice.email}}" class="button button--standard">
+        <i class="las la-envelope"></i>
         <span>&nbsp;&nbsp;Napisz email</span>
       </a>
-      <a href="tel:{{notice.phone}}" mat-raised-button color="primary">
-        <mat-icon>phone</mat-icon>
+      <a href="tel:{{notice.phone}}" class="button button--standard">
+        <i class="las la-phone"></i>
         <span>&nbsp;&nbsp;Zadzwoń</span>
       </a>
-    </div>
-    <div class="action-row">
-      <button mat-raised-button class="button--success">
-        <mat-icon>done</mat-icon>
+      <button class="button button--success">
+        <i class="las la-check-double"></i>
         <span>&nbsp;&nbsp;Zakończone sukcesem</span>
       </button>
-      <button mat-button color="warn">
-        <mat-icon>cancel</mat-icon>
-        <span>&nbsp;&nbsp;Zrezygnuj</span>
-      </button>
     </div>
-  </mat-card-actions>
-</mat-card>
+
+  </div>
+
+  <div class="card__right" *ngIf="inProgress">
+
+    <div class="card__header">
+      <span>Dane potrzebującego:</span>
+    </div>
+
+    <div class="card__content">
+      <div class="card__row">
+        <i class="las la-map-marked-alt"></i>
+        <span>&nbsp;&nbsp;{{notice.city}}</span>
+        <span *ngIf="notice.district">&nbsp;-&nbsp;{{notice.district}}</span>
+      </div>
+
+      <div class="card__row">
+        <i class="las la-envelope"></i>
+        <span>&nbsp;&nbsp;{{notice.email}}</span>
+      </div>
+
+      <div class="card__row">
+        <i class="las la-phone"></i>
+        <span>&nbsp;&nbsp;{{notice.phone}}</span>
+      </div>
+    </div>
+
+    <button class="button button--danger">
+      <i class="las la-ban"></i>
+      <span>&nbsp;&nbsp;Zrezygnuj</span>
+    </button>
+  </div>
+
+</div>

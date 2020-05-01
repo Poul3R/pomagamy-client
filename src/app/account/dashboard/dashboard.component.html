@@ -1,13 +1,13 @@
 <div class="global-container">
   <div class="wrapper">
     <div class="col col--left">
-      <h3 class="col__header">W trakcie realizacji</h3>
+      <h3 class="column-title">W trakcie realizacji</h3>
       <div class="col__wrapper">
         <app-dashboard-notice *ngFor="let inNotice of noticeInProgress" [notice]="inNotice" [inProgress]="true" ></app-dashboard-notice>
       </div>
     </div>
     <div class="col col--right">
-      <h3 class="col__header">Zakończone</h3>
+      <h3 class="column-title">Zakończone</h3>
       <div class="col__wrapper">
         <app-dashboard-notice *ngFor="let inNotice of noticeInProgress" [notice]="inNotice" [inProgress]="false" ></app-dashboard-notice>
       </div>

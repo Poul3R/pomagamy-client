@@ -1,4 +1,5 @@
-import {Component} from '@angular/core';
+import {Component, Input} from '@angular/core';
+import {NoticeInterface} from '../../../interfaces/notice.interface';
 
 @Component({
   selector: 'app-notice-detail-modal',
@@ -6,5 +7,10 @@ import {Component} from '@angular/core';
   styleUrls: ['notice-detail-modal.component.scss']
 })
 export class NoticeDetailModalComponent {
+  checkboxSelected = false;
+  @Input() notice: NoticeInterface;
 
+  onCheckbox() {
+    this.checkboxSelected = !this.checkboxSelected;
+  }
 }

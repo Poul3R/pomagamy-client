@@ -1,25 +1,115 @@
-<div class="backdrop"></div>
+<div class="modal-backdrop"></div>
 <div class="modal">
-  <div class="col col--left">
-    <div class="modal__section">
-      <div class="modal__title">Opis</div>
-      <div class="modal__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto at, cum
-        deserunt eaque earum eos esse inventore laboriosam magni molestiae nostrum saepe tempore ullam voluptate.
-        Aliquid at consectetur deserunt dolore ducimus earum eos error, esse excepturi ipsa iure odit officia porro,
-        quisquam repudiandae sapiente, sit temporibus vel vero voluptatibus.
+  <div class="modal__body">
+
+    <div class="col col--left">
+      <div class="modal__section">
+        <div class="modal__title">Opis</div>
+        <div class="modal__content">
+          {{notice.description}}
+        </div>
+      </div>
+
+      <div class="modal__sections-group">
+        <div class="modal__section">
+          <div class="modal__title">Do kiedy?</div>
+          <div class="modal__content">
+            <div class="content-row">Potrzebne do: {{notice.dateEnd | date: 'full'}}</div>
+            <div class="content-row">Pozostało: niecałe 10 godzin</div>
+          </div>
+        </div>
+
+        <div class="modal__section modal__section--budget">
+          <div class="modal__title">Bużet max</div>
+          <div class="modal__content">127 PLN</div>
+        </div>
+      </div>
+
+      <div class="modal__section modal__section--confirmation-col">
+        <div class="modal__title">Potwierdzenie zapoznania się z zaleceniami</div>
+        <div class="modal__content modal__content--flex">
+          <div class="confirmation-checkbox" (click)="onCheckbox()">
+            <i class="las" [ngClass]="checkboxSelected ? 'la-check-square selected' : 'la-stop'"></i>
+            <!--          <i class="las la-check-square"></i>-->
+          </div>
+          <p>Potwierdzam zapoznanie się z zasadami i zaleceniami. Chcę podjąć się zadania i
+            pomóc potrzebującemu!</p>
+        </div>
       </div>
     </div>
 
-    <div class="modal__section">
-      <div class="modal__title">Do kiedy?</div>
-      <div class="modal__content">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad architecto at, cum
-        deserunt eaque earum eos esse inventore laboriosam magni molestiae nostrum saepe tempore ullam voluptate.
-        Aliquid at consectetur deserunt dolore ducimus earum eos error, esse excepturi ipsa iure odit officia porro,
-        quisquam repudiandae sapiente, sit temporibus vel vero voluptatibus.
+    <div class="col col--right">
+      <div class="modal__section">
+        <div class="modal__title">Dane potrzebującego</div>
+        <div class="modal__content">
+          <div class="content-row content-row--bold">
+            <i class="las la-map-marker"></i>
+            <span>{{notice.city}}</span>
+            <span *ngIf="notice.district">&nbsp;-&nbsp;{{notice.district}}</span>
+          </div>
+          <div class="content-row content-row--bold">
+            <i class="las la-phone"></i>
+            <span>+48 665 565 666</span>
+          </div>
+          <div class="content-row content-row--bold">
+            <i class="las la-envelope"></i>
+            <span>test@gmail.com</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="modal__section">
+        <div class="modal__title">Pamiętaj!</div>
+        <div class="modal__content">
+          <div class="content-row">
+            1.Pomagając okazujesz dobre serce
+            potrzebującym.
+          </div>
+          <div class="content-row">
+            2.Pamiętaj, że podejmując się pomocy
+            zobowiązujesz się do jej wykonania oraz
+            do uczciwości wobec potrzebującego.
+          </div>
+          <div class="content-row">
+            3.Prosimy, abyś podejmując się zadania
+            wypełnij je od początku do końca. W ten
+            sposób nie tylko pomożesz
+            potrzebującemu, ale pozwolisz mu także
+            uniknąć stresu, że zabraknie mu tego,
+            czego na prawdę potrzebuje.
+          </div>
+          <div class="content-row">
+            4. Przed rozpoczęciem pomocy w miarę
+            możliwości najlepiej skontaktuj się z
+            potrzebującym i uzgodnij szczegóły
+            dostawy (bezdotykowej) oraz uregulowania
+            finansów.
+          </div>
+        </div>
       </div>
     </div>
   </div>
-  <div class="col col--right">
-    <i class="las la-battery-three-quarters"></i>
+
+  <div class="modal__footer">
+    <div class="modal__section modal__section--confirmation-footer">
+      <div class="modal__title">Potwierdzenie zapoznania się z zaleceniami</div>
+      <div class="modal__content modal__content--flex">
+        <div class="confirmation-checkbox" (click)="onCheckbox()">
+          <i class="las" [ngClass]="checkboxSelected ? 'la-check-square selected' : 'la-stop'"></i>
+          <!--          <i class="las la-check-square"></i>-->
+        </div>
+        <p>Potwierdzam zapoznanie się z zasadami i zaleceniami. Chcę podjąć się zadania i
+          pomóc potrzebującemu!</p>
+      </div>
+    </div>
+
+    <button class="modal__button modal__button--green">
+      <i class="las la-smile-wink"></i>
+      <span>Podejmij się zadania</span>
+    </button>
+    <button class="modal__button modal__button--red">
+      <i class="las la-times-circle"></i>
+      <span>Poszukaj innego zlecenia</span>
+    </button>
   </div>
 </div>

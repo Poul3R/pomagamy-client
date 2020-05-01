@@ -1,4 +1,4 @@
-<app-notice-detail-modal></app-notice-detail-modal>
+<app-notice-detail-modal *ngIf="selectedNotice" [notice]="selectedNotice"></app-notice-detail-modal>
 
 <div class="global-container">
 
@@ -10,7 +10,7 @@
   <div class="notice-list">
 
     <div class="col">
-      <h3 class="col__title">{{'pilnie potrzebna pomoc' | uppercase}}</h3>
+      <h3 class="column-title">{{'pilnie potrzebna pomoc' | uppercase}}</h3>
       <div class="notice-list__wrapper">
         <app-notice [notice]="notice" *ngFor="let notice of noticesPriority"></app-notice>
       </div>
@@ -18,7 +18,7 @@
 
     <div class="col">
 
-      <h3 class="col__title">{{'potrzebna pomoc' | uppercase}}</h3>
+      <h3 class="column-title">{{'potrzebna pomoc' | uppercase}}</h3>
       <div class="notice-list__wrapper">
         <app-notice [notice]="notice" *ngFor="let notice of noticesStandard"></app-notice>
       </div>

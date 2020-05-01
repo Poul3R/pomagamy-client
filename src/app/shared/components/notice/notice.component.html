@@ -27,7 +27,7 @@
   </div>
 
   <div class="notice-card__actions">
-    <button class="notice-card__button" (click)="onShowMore(notice)"
-            [ngClass]="notice.priority ? 'notice-card__button--priority' : null">{{'Zobacz więcej'}}</button>
+    <button class="button" (click)="onShowMore(notice)"
+            [ngClass]="notice.priority ? 'button--priority' : 'button--standard'">{{'Zobacz więcej'}}</button>
   </div>
 </div>

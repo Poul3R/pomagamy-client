@@ -1,22 +1,152 @@
-.backdrop {
-  position: fixed;
-  top: 0;
-  left: 0;
-  background-color: rgba(0, 0, 0, 0.65);
-  width: 100vw;
-  min-height: 100vh;
-  z-index: 10000;
-}
+@import "../../../global";
+
 
 .modal {
-  width: 100vw;
-  max-width: 600px;
-  padding: 10px;
+  &__sections-group {
+    display: flex;
+  }
 
-  position: fixed;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  z-index: 10001;
-  background-color: #fff;
+  &__section {
+    margin-bottom: 15px;
+
+
+    &--confirmation-col {
+      display: none;
+    }
+
+    &--confirmation-footer {
+      display: block;
+    }
+
+    &--budget {
+      white-space: nowrap;
+      border-left: 1px solid #000;
+      padding-left: 10px;
+      margin-left: 10px;
+    }
+  }
+
+  &__title {
+    font-size: 16px;
+    font-weight: bold;
+    color: $black87;
+    margin-bottom: 10px;
+  }
+
+  &__content {
+    font-size: 14px;
+    color: $black54;
+
+    &--flex {
+      display: flex;
+    }
+  }
+
+  &__footer {
+  }
+
+  &__button {
+    outline: none;
+    border: none;
+    height: 35px;
+    padding: 0 15px;
+    cursor: pointer;
+
+    margin: 10px auto 0 auto;
+    display: block;
+
+    &--green {
+      background-color: $success-green;
+      color: #fff;
+    }
+
+    &--red {
+      background-color: transparent;
+      color: #c71919;
+      border: 1px solid #c71919;
+    }
+
+    i {
+      margin-right: 10px;
+      font-size: 20px;
+    }
+
+    span {
+      line-height: 35px;
+    }
+  }
+
+}
+
+.content-row {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 7px;
+
+  &--bold {
+    font-weight: bold;
+  }
+
+  i {
+    font-size: 25px;
+    margin-right: 10px;
+  }
+}
+
+.confirmation-checkbox {
+  margin-right: 10px;
+  cursor: pointer;
+
+  i {
+    font-size: 30px;
+  }
+
+  .selected {
+    color: #2d8719;
+  }
+}
+
+
+@include desktop {
+  .modal {
+
+    &__body {
+      display: flex;
+    }
+
+    &__section {
+
+      &--confirmation-col {
+        display: block;
+      }
+
+      &--confirmation-footer {
+        display: none;
+      }
+    }
+
+    &__footer {
+      display: flex;
+      justify-content: flex-start;
+      //align-items: center;
+    }
+
+    &__button {
+      margin: 0 20px 0 0;
+    }
+  }
+
+  .col {
+    &--left {
+      padding-right: 20px;
+    }
+
+    &--right {
+      padding-left: 20px;
+      border-left: 1px solid #000;
+      max-width: 40%;
+    }
+  }
+
 }

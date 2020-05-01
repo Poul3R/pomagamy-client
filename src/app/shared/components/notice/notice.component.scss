@@ -13,7 +13,7 @@
   background: rgba(105, 204, 255, 0.35);
 
   &--priority {
-    background: rgba(255, 199, 0, 0.35);
+    background: $card-orange;
   }
 
   // ---- HEADER
@@ -62,36 +62,6 @@
 
   // ---- ACTION
   &__actions {
-  }
-
-  &__button {
-    display: flex;
-    min-height: 30px;
-    padding: 0 15px;
-    outline: none;
-    border: none;
-    font-size: 14px;
-    cursor: pointer;
-    transition: 300ms all ease-out;
-    margin: 0 auto;
-    box-shadow: 0 0 5px #999;
-    background: #77b2d4;
-
-    &:hover {
-      background-color: #9cbfd5;
-      box-shadow: none;
-    }
-
-    &--priority {
-      background-color: #fdaf49;
-      box-shadow: 0 0 5px #ccc;
-
-      &:hover {
-        background-color: #ffc890;
-      }
-    }
-
-
   }
 
 }
